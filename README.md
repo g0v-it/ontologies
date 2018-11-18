@@ -8,7 +8,7 @@ It captures different perspectives of a government budget data like historical t
 
 g0v fr-ap is a semantic web application that builds upon the following RDF vocabularies:: 
 
-- the [W3C RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube), to describe the outgoings/incomes accounts observations
+- the [W3C RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube), to describe data observations and statistics.
 - the [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) that extends the Data Cube Vocabulary with classes, attributes and bindings about a generic Financtial reports.
 - the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat/) to describe the dataset metadata
 - the [SKOS](https://www.w3.org/TR/skos-primer) to describe balance taxonomy.
@@ -86,18 +86,38 @@ A reasoner that is able to understand SKOS and FR axioms is able to generate CUB
 
 ```
 
-
-The directory [examples](examples/README.ttl) provides some data and axioms ready to use in a RDF store with a SPARQL update and query capabilities.
-
-## How to use FR
+## How to use fr-ap
 
 If you want to write an application that analyzes/visualizes budget data, first you have to transform the government budget raw data in RDF linked 
 data according to fr-ap classes and properties. 
 
-With SPARQL update you can also easily write rules to model the  financial data as requested BY the visualization tool (for example a bubble graph).
-The application data model can queried using the [SPARQL language](http://www.w3.org/TR/sparql11-query/).
+Then you reason about data and infer tha missing RDF statements (see axioms directory as example). After reasoning
+you shoudl check the integrity of resulting Knowledge Base (see tests).
+
+Last, with SPARQL you model the financial information as requested by your selected visualization/analysis tool (for example a bubble graph).
+You can both materialize the visual application data model in the knowledge base with SPARQL Update or creating it on the fly querying the
+knowledge base with [SPARQL language](http://www.w3.org/TR/sparql11-query/). If your visualization app is Semantic Web aware (e.g. a Solid application),
+nothing else is required. If your app requires a json interface, you probably will provide an extra API layer.
 
 In this picture shows the typical workflow:
 
 ![dataflow](doc/g0v-budget-dataflow.png)
 
+
+The directory [examples](examples/README.md) provides some data examples.
+The directory [axioms](axioms/README.md) provides some data and axioms ready to use in a RDF store with a SPARQL update.
+The directory [tests](tests/README.md) provides some tests to verify the integrity of a knowledge base respect g0v-ap application profile
+
+With [Docker](https://docker.com), you can create and test an example knowledge base running the 
+run_tests.sdaas in [LinkedData.Center SDaaS platform](http://linkeddata.center/):
+
+```
+docker run -d -p 80:8080 -v $PWD/.:/workspace --name kb linkeddatacenter/sdaas-ce
+docker exec -ti kb sdaas -f run_tests.sdaas --reboot
+```
+
+logs info and debug traces will be created in `.cache` directory.
+
+To access the knowledge base point a browser to http://localhost/sdaas
+
+Free the running docker container with the `docker rm -f kb` command.

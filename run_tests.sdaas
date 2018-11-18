@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -a
+
+
+####################################################
+SD_LOG  "Loading external resources..."
+####################################################
+SD_LEARN http://publications.europa.eu/mdr/resource/authority/currency/skos/currencies-skos.rdf
+SD_LEARN http://reference.data.gov.uk/id/gregorian-interval/2014-01-01T00:00:00/P1Y
+
+
+####################################################
+SD_LOG  "Loading example data..."
+####################################################
+SD_LOAD_RDF_FILE urn:graph:data "examples/data.ttl"
+
+
+####################################################
+SD_LOG  "Reasoning..."
+####################################################
+SD_SPARQL_UPDATE @axioms/skos_axioms.sparql_update
+SD_SPARQL_UPDATE @axioms/qb_axioms.sparql_update
+
+
+####################################################
+SD_LOG  "Testing..."
+####################################################
+for testFile in $(ls -v tests/*ask); do
+    echo -n "   $(basename $testFile)..."
+    case "$(SD_SPARQL_QUERY xml @$testFile)" in
+        *true* ) echo "OK";;
+        *false* ) echo "FAIL";;
+    esac
+done
+
+SD_THATS_ALL_FOLKS
