@@ -104,9 +104,9 @@ In this picture shows the typical workflow:
 ![dataflow](doc/g0v-budget-dataflow.png)
 
 
-The directory [examples](examples/README.md) provides some data examples.
-The directory [axioms](axioms/README.md) provides some data and axioms ready to use in a RDF store with a SPARQL update.
-The directory [tests](tests/README.md) provides some tests to verify the integrity of a knowledge base respect g0v-ap application profile
+The directory [examples](examples/) provides some data examples.
+The directory [axioms](axioms/) provides some data and axioms ready to use in a RDF store with a SPARQL update.
+The directory [tests](tests/) provides some tests to verify the integrity of a knowledge base respect g0v-ap application profile
 
 With [Docker](https://docker.com), you can create and test an example knowledge base running the 
 run_tests.sdaas in [LinkedData.Center SDaaS platform](http://linkeddata.center/):
