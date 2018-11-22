@@ -3,6 +3,7 @@
 ##
 PREFIX fr: <http://linkeddata.center/botk-fr/v1#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#>
 
 INSERT { ?fact fr:refPeriod ?ref_period} 
 WHERE {  
@@ -17,9 +18,6 @@ WHERE {
 ##
 ## AXIOM: inherit the unit attribute in Fact from the dataset, if missing
 ##
-PREFIX fr: <http://data.budget.g0v.it/g0v-ap/v1#>
-PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#>
 
 INSERT { ?fact fr:unit ?unit} 
 WHERE {  
