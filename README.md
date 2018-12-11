@@ -6,16 +6,14 @@ Semantic Web application profiles, ontologies and controlled vocabularies used b
 
 ## Application profiles
 
-Application profiles are restriction to the usage of existing ontologies for a specific application family
+Application profiles are restrictions to the usage of existing ontologies designed for a specific applications family
 
-- **[fr-ap](fr-ap/)**: an application application profile to import financial report. This ontology it is used by finacial report visualization application 
-(es. https://budget.g0v.it and http://budget.g0v.it ).
+- **[fr-ap](fr-ap/)**: an application  profile to annotate financial report. This profile is used by finacial report visualization application 
+(es. https://budget.g0v.it and http://inps.g0v.it ).
 
 ## Ontologies
 
-Ontologies are data model that describe a domain knowledge. The normally are designed extending existing ontologies (sometime from scratch)
+Ontologies are data model that describe a domain knowledge
 
-- **DMAP (Data Map Ontology)**: contains the datamodel used by the LODMAP2D georeferenced map component.
-
-All works in this report is released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/)
+All works in this repository are released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/)
 
