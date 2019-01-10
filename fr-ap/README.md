@@ -1,7 +1,7 @@
 g0v fr-ap: a financial report application profile
 =================================================
 
-g0v fr-ap  is a specification based on [Finacial Report Vocabulary](http://linkeddata.center/botk-fr/v1) suitable to annotate government data 
+g0v fr-ap  is a specification based on [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) suitable to annotate government data 
 with the purpose of supporting budget visualization applications (e.g. http://budget.g0v.it/).  
 
 It captures different perspectives of a government budget data like historical trends, cross-department and component breakdown of tax by government. 
