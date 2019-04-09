@@ -1,12 +1,13 @@
 AUDITEL vocabulary
 =================
 
-
 AUDITEL is a private consortium that collects data about italian TV shows audience.
 
-The namespace for auditel terms is **https://g0v-it.github.io/ontologies/auditel/**
+The namespace for auditel terms is **https://g0v-it.github.io/ontologies/auditel#**
 
-auditel vocabulary is a semantic web application that builds upon the following RDF vocabularies:: 
+Last Turtle RDF serialization is available in https://g0v-it.github.io/ontologies/auditel/v1.ttl
+
+The auditel vocabulary is a semantic web application that builds upon the following RDF vocabularies:
 
 - the [W3C RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube), to describe data observations and statistics.
 - the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat/) to describe the dataset metadata
@@ -24,11 +25,14 @@ Following metrics is observed in AUDITEL data:
 
 in following dimensions:
 
-- context: the monitored context expressed as SKOS concept, same as agcom:context
+- context: the auditel monitored context expressed as SKOS concept, same as agcom:context
+
+Following properties are defined: 
+
+- refPeriod: the observation period , expressed as [time interval](http://reference.data.gov.uk/def/intervals). Same as agcom:refPeriod
 
 
-
-In this snippet describes an AGCOM observation as linked data:
+In this snippet describes an AUDITEL observation as linked data:
 
 ```
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -38,8 +42,8 @@ In this snippet describes an AGCOM observation as linked data:
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
 @prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
-@prefix agcom: <https://g0v-it.github.io/ontologies/agcom/> .
-@prefix auditel: <https://g0v-it.github.io/ontologies/auditel/> .
+@prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
+@prefix auditel: <https://g0v-it.github.io/ontologies/auditel#> .
 @prefix resource: <http://agcom.linkeddata.cloud/resource/> . 
 resource:auditel_2018 a qb:DataSet ;
 	dct:subject

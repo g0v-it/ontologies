@@ -1,12 +1,14 @@
 AGCOM vocabulary
 =================
 
-[AGCOM]((http://agicom.it/) collects periodic records about the presence of politicians in main TV shows;
+[AGCOM](http://agicom.it/) collects periodic records about the presence of politicians in main TV shows;
 the agcom vocabulary describe the terms to annotate AGICOM data.
 
-The namespace for agcom vocabulary is **https://g0v-it.github.io/ontologies/agcom/**
+The namespace for agcom vocabulary is **https://g0v-it.github.io/ontologies/agcom#**
 
-agicom vocabulary is a semantic web application that builds upon the following RDF vocabularies:: 
+Last Turtle RDF serialization is available in https://g0v-it.github.io/ontologies/agcom/v1.ttl
+
+The agcom vocabulary is a semantic web application that builds upon the following RDF vocabularies:
 
 - the [W3C RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube), to describe data observations and statistics.
 - the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat/) to describe the dataset metadata
@@ -49,10 +51,10 @@ In this snippet describes an AGCOM observation as linked data:
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
 @prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
-@prefix agcom: <https://g0v-it.github.io/ontologies/agcom/> .
+@prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
 @prefix resource: <http://agcom.linkeddata.cloud/resource/> . 
 
-resource:agicom_2019_02_1 a qb:DataSet ;
+resource:report_2019_02_1 a qb:DataSet ;
 	dct:subject
         sdmx-subject:1.10 ,      # Political and other community activities
         sdmx-subject:1.11 ,      # Time use
@@ -90,12 +92,5 @@ resource:TG1 a skos:Concept ;
 resource:RAI a skos:Concept ;
 	skos:inScheme resource:editori ;
 	owl:sameAs <http://www.wikidata.org/entity/Q19616> 
-.
-resource:auditel_2018 a qb:DataSet ;
-	dct:subject
-        sdmx-subject:1.11 ,      # Time use
-        sdmx-subject:2.1 ; 	 # Macroeconomic statistics
-	agcom:refPeriod <http://reference.data.gov.uk/id/gregorian-year/2018> ;
-	dct:publisher  resource:AUDITEL;
 .
 ```
