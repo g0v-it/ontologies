@@ -3,7 +3,7 @@ AUDITEL vocabulary
 
 AUDITEL is a private consortium that collects data about italian TV shows audience.
 
-The namespace for auditel terms is **https://g0v-it.github.io/ontologies/auditel#**
+The namespace for auditel terms is **http://g0v-it.github.io/ontologies/auditel#**
 
 Last Turtle RDF serialization is available in https://g0v-it.github.io/ontologies/auditel/v1.ttl
 
@@ -37,6 +37,7 @@ In this snippet describes an AUDITEL observation as linked data:
 ```
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -63,3 +64,16 @@ resource:rating_xxx a qb:Observation;
 	auditel:rating 0.0313 
 .	
 ```
+
+
+## License
+
+(c) 2019 by Enrico Fagnoni at LinkedData.Center
+
+The auditel vocabulary is available under the 
+[Creative Commons Attribution 4.0 Unported license](http://creativecommons.org/licenses/by/4.0/). 
+In a nutshell, you are free to copy, distribute and transmit the work; 
+to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), 
+as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). 
+Proper Attribution: Simply include the statement "This work is based on the agcom ontology, developed by Enrico Fagnoni" and link back to http://LinkedData.Center/
+

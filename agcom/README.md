@@ -4,7 +4,7 @@ AGCOM vocabulary
 [AGCOM](http://agicom.it/) collects periodic records about the presence of politicians in main TV shows;
 the agcom vocabulary describe the terms to annotate AGICOM data.
 
-The namespace for agcom vocabulary is **https://g0v-it.github.io/ontologies/agcom#**
+The namespace for agcom vocabulary is **http://g0v-it.github.io/ontologies/agcom#**
 
 Last Turtle RDF serialization is available in https://g0v-it.github.io/ontologies/agcom/v1.ttl
 
@@ -43,10 +43,10 @@ In this snippet describes an AGCOM observation as linked data:
 ```
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix void: <http://rdfs.org/ns/void#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
@@ -56,9 +56,9 @@ In this snippet describes an AGCOM observation as linked data:
 
 resource:report_2019_02_1 a qb:DataSet ;
 	dct:subject
-        sdmx-subject:1.10 ,      # Political and other community activities
-        sdmx-subject:1.11 ,      # Time use
-        sdmx-subject:3.3.3; 	 # Information society
+		sdmx-subject:1.10 ,      # Political and other community activities
+		sdmx-subject:1.11 ,      # Time use
+		sdmx-subject:3.3.3; 	 # Information society
 	agcom:refPeriod <http://reference.data.gov.uk/id/gregorian-month/2019-02> ;
 	dct:publisher  resource:AGCOM;
 .	
@@ -76,21 +76,32 @@ resource:Matteo_Salvini a foaf:Person ;
 	owl:sameAs <http://www.wikidata.org/entity/Q1055449> 
 .
 resource:Governo a skos:Concept ;
-	skos:inScheme resource:ruoli ;
+	skos:inScheme agcom:ruoli ;
 	owl:sameAs <http://www.wikidata.org/entity/Q3773971> 
 .
 resource:TG1 a skos:Concept ;
-	skos:inScheme resource:programmi ;
+	skos:inScheme agcom:programmi ;
 	owl:sameAs <http://www.wikidata.org/entity/Q615926> ;
-	agcom:emittente :RAI1
+	agcom:emittente resource:RAI1
 .
 :RAI1 a skos:Concept ;
-	skos:inScheme resource:emittenti ;
+	skos:inScheme agcom:emittenti ;
 	owl:sameAs <http://www.wikidata.org/entity/Q258131> ;
-	dct:publisher :RAI
+	dct:publisher resource:RAI
 .
 resource:RAI a skos:Concept ;
-	skos:inScheme resource:editori ;
+	skos:inScheme agcom:editori ;
 	owl:sameAs <http://www.wikidata.org/entity/Q19616> 
 .
 ```
+
+## License
+
+(c) 2019 by Enrico Fagnoni at LinkedData.Center
+
+The agicom vocabulary is available under the 
+[Creative Commons Attribution 4.0 Unported license](http://creativecommons.org/licenses/by/4.0/). 
+In a nutshell, you are free to copy, distribute and transmit the work; 
+to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), 
+as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). 
+Proper Attribution: Simply include the statement "This work is based on the agcom ontology, developed by Enrico Fagnoni" and link back to http://LinkedData.Center/
