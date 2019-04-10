@@ -7,8 +7,17 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
-@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
 @prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
+
+
+# -- Data structure definitions ----------------------------
 
 agcom:rilevazioni_pluralismo a qb:DataStructureDefinition ;
 	qb:component 
@@ -18,6 +27,41 @@ agcom:rilevazioni_pluralismo a qb:DataStructureDefinition ;
         [ qb:dimension agcom:context ; qb:componentRequired "true"^^xsd:boolean],
 		[ qb:measure agcom:speakingTime ; qb:componentRequired "true"^^xsd:boolean]
 .
+
+                   
+# -- Dimensions and measures  ----------------------------
+
+agcom:refPeriod  a rdf:Property, qb:DimensionProperty;
+    rdfs:label "reference period"@en;
+    rdfs:subPropertyOf sdmx-dimension:refPeriod;
+    rdfs:range interval:Interval;
+    qb:concept sdmx-concept:refPeriod ;
+    .
+
+agcom:role  a rdf:Property, qb:DimensionProperty;
+    rdfs:label "Political or institutional role"@en;
+    rdfs:range skos:Concept
+    .
+    
+agcom:subject  a rdf:Property, qb:DimensionProperty;
+    rdfs:label "Subject who speaks"@en;
+    rdfs:range skos:Concept
+    .
+  
+agcom:context  a rdf:Property, qb:DimensionProperty;
+    rdfs:label "Were subjects speak"@en;
+    rdfs:range skos:Concept
+    .
+
+agcom:speakingTime  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Speaking time in second"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:nonNegativeInteger ;
+    .
+
+
+# -- Taxonomies --------------------------------------------
+
 
 #
 # Tassonomia programmi AGCOM
