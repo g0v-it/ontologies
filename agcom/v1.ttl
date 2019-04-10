@@ -1,1 +1,48 @@
-	
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
+
+#
+# Tassonomia programmi AGCOM
+#
+agcom:programmi a skos:ConceptScheme ;
+    dct:title "Programmi monitorati da AGCOM"@it ;
+    dct:description "Telegiornali e programmi extra-Tg monitorati su Rai, Mediaset, Cairo, Sky"@it
+.
+
+
+#
+# Tassonomia soggetti AGCOM
+#
+agcom:soggetti a skos:ConceptScheme ;
+    dct:title "Tassonomia soggetti individuali, politici e istituzionali AGCOM"@it;
+    skos:hasTopConcept 
+    	agcom:soggetto_individuale,
+    	agcom:soggetto_politico,
+    	agcom:soggetto_istituzionale;
+.
+agcom:soggetto_istituzionale a skos:Concept ;
+    skos:prefLabel "Soggetto istituzionale"@it ;
+    skos:narrower
+    	agcom:Presidente_della_Repubblica ,
+    	agcom:Presidente_del_Consiglio ,
+    	agcom:Presidente_del_Senato ,
+    	agcom:Presidente_della_Camera ,
+    	agcom:Governo ,
+    	agcom:Unione_Europea
+.
+
+agcom:soggetto_politico a skos:Concept;
+    skos:prefLabel "Soggetto politico"@it
+.
+agcom:soggetto_individuale a skos:Concept;
+	skos:prefLabel "Soggetto individuale"@it
+.
