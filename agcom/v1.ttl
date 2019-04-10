@@ -10,6 +10,15 @@
 @prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
 @prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
 
+agcom:rilevazioni_pluralismo a qb:DataStructureDefinition ;
+	qb:component 
+        [ qb:dimension agcom:subject ; qb:order 1 ],
+        [ qb:dimension agcom:refPeriod ; qb:componentRequired "true"^^xsd:boolean; qb:componentAttachment qb:DataSet],
+        [ qb:dimension agcom:role ; qb:componentRequired "true"^^xsd:boolean],
+        [ qb:dimension agcom:context ; qb:componentRequired "true"^^xsd:boolean],
+		[ qb:measure agcom:speakingTime ; qb:componentRequired "true"^^xsd:boolean]
+.
+
 #
 # Tassonomia programmi AGCOM
 #
