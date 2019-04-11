@@ -71,6 +71,46 @@ agcom:programmi a skos:ConceptScheme ;
     dct:title "Programmi televisivi monitorati da AGCOM"@it ;
     dct:description "Telegiornali e programmi extra-Tg monitorati nelle rilevazioni AGCOM"@it
 .
+agcom:Tg1_programma a skos:Concept ;
+	skos:prefLabel "Tg1"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Rai_1_emittente 
+.
+agcom:Tg2_programma a skos:Concept ;
+	skos:prefLabel "Tg2"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Rai_2_emittente 
+.
+agcom:Tg3_programma a skos:Concept ;
+	skos:prefLabel "Tg3"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Rai_3_emittente 
+.
+agcom:Tg4_programma a skos:Concept ;
+	skos:prefLabel "Tg4"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Rete_4_emittente 
+.
+agcom:Tg5_programma a skos:Concept ;
+	skos:prefLabel "Tg5"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Canale_5_emittente 
+.
+agcom:Studio_Aperto_programma a skos:Concept ;
+	skos:prefLabel "Studio Aperto"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:Italia_1_emittente 
+.
+agcom:TgCom24_programma a skos:Concept ;
+	skos:prefLabel "TgCom24"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:TgCom24_emittente 
+.
+agcom:TgCom24-extra_tg_programma a skos:Concept ;
+	skos:prefLabel "TgCom24 - extra tg"@it ;
+	skos:inScheme agcom:programmi ;
+	skos:related agcom:TgCom24_emittente 
+.
 agcom:Canale_5-extra_tg_programma a skos:Concept ;
 	skos:prefLabel "Canale 5 - extra tg"@it ;
 	skos:inScheme agcom:programmi ;
