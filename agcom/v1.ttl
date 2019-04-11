@@ -965,3 +965,46 @@ agcom:Rossi_Enrico a skos:Concept;
     skos:prefLabel "Rossi Enrico"@it;
     skos:broader agcom:soggetto_individuale
 .
+
+# ----------- Most important linked data ---------------------------
+
+agcom:Berlusconi_Silvio owl:sameAs <http://www.wikidata.org/entity/Q11860> .
+agcom:Salvini_Matteo owl:sameAs <http://www.wikidata.org/entity/Q1055449> .
+agcom:Di_Maio_Luigi owl:sameAs <http://www.wikidata.org/entity/Q13581225> .
+agcom:Conte_Giuseppe owl:sameAs <http://www.wikidata.org/entity/Q53844829> .
+agcom:Martina_Maurizio owl:sameAs <http://www.wikidata.org/entity/Q13371788> .
+agcom:Zingaretti_Nicola owl:sameAs <http://www.wikidata.org/entity/Q1332769> .
+agcom:Renzi_Matteo owl:sameAs <http://www.wikidata.org/entity/Q47563> .
+agcom:Corrao_Ignazio owl:sameAs <http://www.wikidata.org/entity/Q16977486> .
+agcom:Giachetti_Roberto owl:sameAs <http://www.wikidata.org/entity/Q3938844> .
+agcom:Mattarella_Sergio owl:sameAs <http://www.wikidata.org/entity/Q3956186> .
+agcom:Meloni_Giorgia owl:sameAs <http://www.wikidata.org/entity/Q451791> .
+agcom:Giarrusso_Dino owl:sameAs <http://www.wikidata.org/entity/Q50221206> .
+agcom:Tajani_Antonio owl:sameAs <http://www.wikidata.org/entity/Q440710> .
+agcom:Gasparri_Maurizio owl:sameAs <http://www.wikidata.org/entity/Q431345> .
+agcom:Baldino_Vittoria owl:sameAs <http://www.wikidata.org/entity/> .
+agcom:Centinaio_Gian_Marco owl:sameAs <http://www.wikidata.org/entity/Q15896991> .
+agcom:Tria_Giovanni owl:sameAs <http://www.wikidata.org/entity/Q54555492> .
+agcom:Bersani_Pierluigi owl:sameAs <http://www.wikidata.org/entity/Q47556> .
+agcom:Carabetta_Luca owl:sameAs <http://www.wikidata.org/entity/Q62091235> .
+agcom:Calenda_Carlo owl:sameAs <http://www.wikidata.org/entity/Q12467437> .
+
+agcom:Forza_Italia owl:sameAs <http://www.wikidata.org/entity/Q14924303> .
+agcom:Fratelli_d_Italia owl:sameAs <http://www.wikidata.org/entity/Q1757843> .
+agcom:Lega owl:sameAs <http://www.wikidata.org/entity/Q47750> .
+agcom:Lega_Nord owl:sameAs <http://www.wikidata.org/entity/Q47750> .
+agcom:Liberi_e_Uguali owl:sameAs <http://www.wikidata.org/entity/Q44929224> .
+agcom:M5S owl:sameAs <http://www.wikidata.org/entity/Q47817> .
+agcom:PD owl:sameAs <http://www.wikidata.org/entity/Q47729> .
+agcom:Per_le_Autonomie-Minoranze_linguistiche owl:sameAs <http://www.wikidata.org/entity/Q12857400> .
+agcom:PiuEuropa-Centro_Democratico owl:sameAs <http://www.wikidata.org/entity/Q47090559> .
+
+agcom:Governo owl:sameAs <http://www.wikidata.org/entity/Q3773971> .
+agcom:Presidente_del_Consiglio owl:sameAs <http://www.wikidata.org/entity/Q1740905> .
+agcom:Presidente_della_Camera owl:sameAs <http://www.wikidata.org/entity/Q6360077> .
+agcom:Presidente_della_Repubblica owl:sameAs <http://www.wikidata.org/entity/Q15191779> .
+agcom:Unione_Europea owl:sameAs <http://www.wikidata.org/entity/Q458> .
+
+
+
+
