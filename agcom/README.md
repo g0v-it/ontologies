@@ -76,22 +76,10 @@ resource:Matteo_Salvini a foaf:Person ;
 	owl:sameAs <http://www.wikidata.org/entity/Q1055449> 
 .
 resource:Governo a skos:Concept ;
-	skos:inScheme agcom:ruoli ;
 	owl:sameAs <http://www.wikidata.org/entity/Q3773971> 
 .
 resource:TG1 a skos:Concept ;
-	skos:inScheme agcom:programmi ;
 	owl:sameAs <http://www.wikidata.org/entity/Q615926> ;
-	agcom:emittente resource:RAI1
-.
-:RAI1 a skos:Concept ;
-	skos:inScheme agcom:emittenti ;
-	owl:sameAs <http://www.wikidata.org/entity/Q258131> ;
-	dct:publisher resource:RAI
-.
-resource:RAI a skos:Concept ;
-	skos:inScheme agcom:editori ;
-	owl:sameAs <http://www.wikidata.org/entity/Q19616> 
 .
 ```
 
