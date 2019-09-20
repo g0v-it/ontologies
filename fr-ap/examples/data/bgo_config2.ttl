@@ -1,0 +1,270 @@
+#
+# This is a simple configuration file compatible wit LODMAP2D application 
+# see https://github.com/linkeddatacenter/LODMAP2D
+#
+#
+@prefix bgo: <http://linkeddata.center/lodmap-bgo/v1#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix resource: <http://example.com/resource/> .
+
+
+<> foaf:primaryTopic resource:domain .
+
+################################################
+# Menues and navigation data
+################################################
+resource:domain a bgo:Domain.
+
+#######################################################
+# Views
+#######################################################
+resource:overview a bgo:Overview, bgo:DefaultAccountSet ;
+	bgo:label "home" ;
+	bgo:title "Overview" ;
+    bgo:hasPartitionList (
+        resource:p1
+        resource:p2
+    ) ;
+	bgo:hasTrendColorScheme resource:trend_color_scheme ;
+    bgo:hasTotalizer resource:totalizer ;
+    bgo:hasTagCloud resource:tag_cloud ;
+    bgo:hasSearchPane resource:search_pane ;
+.
+
+### Credits page ##########
+resource:credits_page a bgo:CreditsView ;
+	bgo:title "Credits"@en ;
+	bgo:abstract ""
+.
+
+
+### Term and conditions page ##########
+resource:terms_page a bgo:TermsView ;
+	bgo:title "Terms & conditions" ;
+	bgo:abstract "here  your **Terms & conditions** about published service."^^bgo:MDString
+.
+
+#### Table ###################
+resource:table_view a bgo:TableView ;
+	bgo:title "Table view";
+    bgo:hasTotalizer resource:totalizer ;
+    bgo:hasSearchPane resource:search_pane ;
+
+    bgo:headerTitle "Title" ;
+    bgo:headerAmount "Amount" ;
+    bgo:headerTrend "Trend" ;
+    bgo:headerDescription "Description" ;
+.
+
+#### Default account set ##############
+resource:default_set  a bgo:DefaultAccountSet  ;
+    bgo:label "other" ;
+    bgo:title "without classification"
+.
+
+#######################################################
+# Partitions
+#######################################################
+
+##### P1
+resource:p1 a bgo:Partition ;
+	bgo:partitionId "p1" ;
+	bgo:label "partition1" ;
+	bgo:title "Partition 1 title" ;
+    bgo:hasDefaultAccountSubSet resource:default_set
+
+    bgo:hasAccountSubSet
+        resource:p1_1 ,
+        resource:p1_2
+
+    ;
+.
+
+
+resource:p1_1 a bgo:AccountSet ;
+    bgo:title "Subset 1 title" ;
+    bgo:description "An account subset" ;
+    bgo:abstract "This use **markdown**"^^bgo:MDString ;
+    bgo:hasAccount
+        resource:account_1
+.
+
+resource:p1_2 a bgo:AccountSet ;
+    bgo:label "subset 2" ;
+    bgo:title "Subset 2 title"
+.
+
+
+#### P2 ###########
+resource:p2 a bgo:Partition;
+	bgo:partitionId "2" ;
+	bgo:label "partition2" ;
+	bgo:title "P2 title" ;
+    bgo:hasAccountSubSet
+        resource:p2_1 ,
+        resource:p2_2
+
+    ;
+
+
+    # Note no default partition is present : a default one should be create with title "Unassigned"
+.
+
+resource:p2_1 a bgo:AccountSet ;
+    bgo:title "Subset 1 title" ;
+    bgo:description "An account subset" ;
+    bgo:abstract "This use **markdown**"^^bgo:MDString ;
+    bgo:hasAccount
+        resource:account_1
+.
+
+resource:p2_2 a bgo:AccountSet ;
+    bgo:label "subset 2" ;
+    bgo:title "Subset 2 title" ;
+    bgo:hasAccount
+        resource:account_2
+.
+
+
+#######################################################
+# Views options
+#######################################################
+
+###### Trend Color Scheme #######
+resource:trend_color_scheme a bgo:TrendColorScheme ;
+    bgo:title "Variazione percentuale rispetto al valore di acquisto" ;
+    bgo:noTrendColor "#cdcdcd" ;
+    bgo:rateTreshold
+		( -1	"#a50026" ) ,
+		( -0.5	"#d73027" ) ,
+		( -0.25	"#f46d43" ) ,
+		( -0.10	"#fdae61" ) ,
+		( -0.05	"#fee08b" ) ,
+		( 0		"#ffffbf" ) ,
+		( 0.05	"#d9ef8b" ) ,
+		( 0.10	"#a6d96a" ) ,
+		( 0.25	"#66bd63" ) ,
+		( 0.5	"#1a9850" ) ,
+		( 10  	"#006837" )
+.
+
+
+
+##### Totalizer #######
+resource:totalizer a bgo:Totalizer ;
+    bgo:minimalTotalPrintTemplate "€ %s" ;
+    bgo:totalPrintfTemplate "Totale: € %s" ;
+    bgo:totalFilteredPrintfTemplate "Spese evidenziate: € %s (%s del tot.)" ;
+    bgo:treshold 0.01 ;
+    bgo:tresholdPrintTemplate "Meno del 0,01%" ;
+.
+
+### Search and tag clouds #######
+resource:search_pane a bgo:SearchWidget ;
+    bgo:label "Cerca"
+.
+
+
+resource:tag_cloud a bgo:TagCloud ;
+	bgo:hasTag
+		[ bgo:label "rfgt2"; bgo:tagWeight 1.0 ] ,
+		[ bgo:label "Tetrst2"; bgo:tagWeight 0.5 ] ,
+		[ bgo:label "Tewsst3"; bgo:tagWeight 1.0 ] ,
+		[ bgo:label "Tedgst4"; bgo:tagWeight 0.2 ] ,
+		[ bgo:label "Tefgst5"; bgo:tagWeight 0.7 ] ,
+		[ bgo:label "Teefst6"; bgo:tagWeight 0.3 ],
+        [ bgo:label "Testsdf4"; bgo:tagWeight 0.2 ] ,
+		[ bgo:label "Tegsgsbst5"; bgo:tagWeight 0.7 ] ,
+		[ bgo:label "Testeag6"; bgo:tagWeight 0.3 ],
+        [ bgo:label "Tesbgbt4"; bgo:tagWeight 0.2 ] ,
+		[ bgo:label "Twrfegest5"; bgo:tagWeight 0.7 ] ,
+		[ bgo:label "Tesqr3hyt6"; bgo:tagWeight 0.3 ]
+.
+
+#############################################
+# Accounts perspectives
+#############################################
+resource:metadata_perspective a bgo:MetadataPerspective ;
+    bgo:hasTotalizer resource:totalizer ;
+   	bgo:notAvailableTrendAccountLabel "Non disponibile"
+.
+
+resource:historical_perspective a bgo:HistoricalPerspective ;
+    bgo:hasTotalizer resource:totalizer ;
+	bgo:title "Storico dell'azione"
+.
+
+resource:breakdown_perspective a bgo:BreakdownPerspective ;
+    bgo:hasTotalizer resource:totalizer ;
+	bgo:title "Dettaglio capitoli di spesa"
+.
+
+
+#############################################
+# Accounts
+#############################################
+
+## Account 1 with all the details
+resource:account_1 a bgo:Account, bgo:ProfiledAccount ;
+	bgo:accountId "account_1" ;
+    bgo:amount 1000.00 ;
+    bgo:referenceAmount 950.00 ;
+    bgo:title "titolo account_1" ;
+    bgo:description "descrizione account_1" ;
+    bgo:abstract "Il rimborso dei titolo del debito statale tiene conto del: \n- pagamento delle quote capitale sui titoli del debito statale\n- rimborso del capitale relativo a buoni postali fruttiferi\n- rimborso alla Banca d'Italia del controvalore delle lire presentate al cambio per il ritiro dalla circolazione\n- rimborso passività a carico dello Stato"^^bgo:MDString ;
+    bgo:depiction <http://bit.ly/2MxbJWQ> ;
+    bgo:versionLabel "2019" ;
+
+	bgo:hasHistoryRec
+		[ bgo:versionLabel "2018" ; bgo:amount 980.00 ],
+		[ bgo:versionLabel "2017" ; bgo:amount 1100.00 ]
+    ;
+    bgo:hasBreakdown
+    	[ bgo:title "account_1_part 1" ; bgo:amount 110.00 ] ,
+    	[ bgo:title "account_1_part 2" ; bgo:amount 120.00 ] ,
+    	[ bgo:title "account_1_part 3" ; bgo:amount 130.00 ]
+    ;
+
+    bgo:usesHistoricalPerspective resource:historical_perspective ;
+    bgo:usesBreakdownPerspective resource:breakdown_perspective ;
+    bgo:usesMetadataPerspective resource:metadata_perspective ;
+.
+
+
+##################################################
+## Other accounts without detailed profile
+###################################################
+resource:account_2 a bgo:Account ;
+	bgo:accountId "account_2" ;
+    bgo:amount 100.00 ;
+    bgo:referenceAmount 95.00 ;
+    bgo:title "titolo account_2" ;
+    bgo:description "descrizione account_2" ;
+    bgo:depiction <http://bit.ly/2MxbJWQ>
+.
+
+resource:account_3 a bgo:Account ;
+	bgo:accountId "account_3" ;
+    bgo:amount 100.00 ;
+    bgo:referenceAmount 95.00 ;
+    bgo:title "titolo account_3" ;
+    bgo:depiction "#fcba03"  # as RGB solid color
+.
+
+resource:account_4 a bgo:Account ;
+ 	bgo:accountId "account_4" ;
+     bgo:amount 100.00 ;
+     bgo:referenceAmount 95.00
+.
+
+
+resource:account_5 a bgo:Account ;
+ 	bgo:accountId "account_5" ;
+    bgo:amount 100.00
+.
+
+# no amounts default to amount=0
+resource:account_6 a bgo:Account ;
+	bgo:accountId "account_6"
+.
+

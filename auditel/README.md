@@ -2,6 +2,7 @@ AUDITEL vocabulary
 =================
 
 AUDITEL is a private consortium that collects data about italian TV shows audience.
+This vocabulary define some terms used by g0v application derived from some AUDITEL concepts.
 
 The namespace for auditel terms is **http://g0v-it.github.io/ontologies/auditel#**
 
@@ -13,6 +14,7 @@ The auditel vocabulary is a semantic web application that builds upon the follow
 - the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat/) to describe the dataset metadata
 - the [SKOS](https://www.w3.org/TR/skos-primer) to describe balance taxonomy.
 - the [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/)
+- the [W3C time ontology](https://www.w3.org/TR/owl-time/)
 - some facilities from [sdmx ontologies](https://sdmx.org/)
 
 auditel vocabulary also reuses some individual references to linked open data provided by [UK e-gov](https://github.com/alphagov/datagovuk_reference) and from [AGCOM vocabulary](https://g0v-it.github.io/ontologies/agcom/)
@@ -25,11 +27,12 @@ Following metrics is observed in AUDITEL data:
 
 in following dimensions:
 
-- context: the auditel monitored context expressed as SKOS concept, same as agcom:context
+- context: the auditel monitored context expressed as SKOS concept
 
 Following properties are defined: 
 
-- refPeriod: the observation period , expressed as [time interval](http://reference.data.gov.uk/def/intervals). Same as agcom:refPeriod
+- refPeriod: the observation period , expressed as a time:DateTimeInterval and possibly 
+using one of the classexposed in the [time intervals ontology](http://reference.data.gov.uk/def/intervals/).
 
 
 In this snippet describes an AUDITEL observation as linked data:
@@ -42,6 +45,7 @@ In this snippet describes an AUDITEL observation as linked data:
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
 @prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
 @prefix auditel: <https://g0v-it.github.io/ontologies/auditel#> .

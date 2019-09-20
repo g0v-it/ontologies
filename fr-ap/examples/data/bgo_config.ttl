@@ -1,0 +1,152 @@
+#
+# This is a simple configuration file compatible wit LODMAP2D application 
+# see https://github.com/linkeddatacenter/LODMAP2D
+#
+#
+@prefix bgo: <http://linkeddata.center/lodmap-bgo/v1#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix resource: <http://example.com/resource/> .
+
+
+<> foaf:primaryTopic resource:domain .
+
+################################################
+# Menues and navigation data
+################################################
+resource:domain a bgo:Domain.
+
+#######################################################
+# Views
+#######################################################
+resource:overview a bgo:Overview, bgo:DefaultAccountSet ;
+	bgo:label "home" ;
+	bgo:title "Overview" ;
+    bgo:hasPartitionList (
+        resource:p1
+        resource:p2
+    ) ;
+	bgo:hasTrendColorScheme resource:trend_color_scheme ;
+    bgo:hasTotalizer resource:totalizer ;
+    bgo:hasTagCloud resource:tag_cloud ;
+    bgo:hasSearchPane resource:search_pane ;
+.
+
+### Credits page ##########
+resource:credits_page a bgo:CreditsView ;
+	bgo:title "Credits"@en ;
+	bgo:abstract ""
+.
+
+### Term and conditions page ##########
+resource:terms_page a bgo:TermsView ;
+	bgo:title "Terms & conditions" ;
+	bgo:abstract "here  your **Terms & conditions** about published service."^^bgo:MDString
+.
+
+#### Table view ###################
+resource:table_view a bgo:TableView ;
+	bgo:title "Table view";
+    bgo:hasTotalizer resource:totalizer ;
+    bgo:hasSearchPane resource:search_pane ;
+
+    bgo:headerTitle "Title" ;
+    bgo:headerAmount "Amount" ;
+    bgo:headerTrend "Trend" ;
+    bgo:headerDescription "Description" ;
+.
+
+
+#######################################################
+# Views options
+#######################################################
+
+###### Trend Color Scheme #######
+resource:trend_color_scheme a bgo:TrendColorScheme ;
+    bgo:title "Trend" ;
+    bgo:noTrendColor "#cdcdcd" ;
+    bgo:rateTreshold
+		( -1	"#a50026" ) ,
+		( -0.5	"#d73027" ) ,
+		( -0.25	"#f46d43" ) ,
+		( -0.10	"#fdae61" ) ,
+		( -0.05	"#fee08b" ) ,
+		( 0		"#ffffbf" ) ,
+		( 0.05	"#d9ef8b" ) ,
+		( 0.10	"#a6d96a" ) ,
+		( 0.25	"#66bd63" ) ,
+		( 0.5	"#1a9850" ) ,
+		( 10  	"#006837" )
+.
+
+
+
+##### Totalizer #######
+resource:totalizer a bgo:Totalizer ;
+    bgo:minimalTotalPrintTemplate "€ %s" ;
+    bgo:totalPrintfTemplate "Total: € %s" ;
+    bgo:totalFilteredPrintfTemplate "Hilighted: € %s (%s del tot.)" ;
+    bgo:treshold 0.01 ;
+    bgo:tresholdPrintTemplate "Less than 0,01%" ;
+.
+
+### Search and tag clouds #######
+resource:search_pane a bgo:SearchWidget ;
+    bgo:label "Search"
+.
+
+#############################################
+# Accounts perspectives
+#############################################
+resource:metadata_perspective a bgo:MetadataPerspective ;
+    bgo:hasTotalizer resource:totalizer ;
+   	bgo:notAvailableTrendAccountLabel "N.A."
+.
+
+#######################################################
+# Partitions
+#######################################################
+
+##### P1
+resource:p1 a bgo:Partition ;
+	bgo:partitionId "p1" ;
+	bgo:label "partition1" ;
+	bgo:title "Partition 1 title" ;
+    bgo:hasDefaultAccountSubSet resource:default_set
+
+    bgo:hasAccountSubSet
+        resource:p1_1 ,
+        resource:p1_2
+
+    ;
+.
+
+
+resource:p1_1 a bgo:AccountSet ;
+    bgo:title "Subset 1 title" ;
+    bgo:description "An account subset" ;
+    bgo:abstract "This use **markdown**"^^bgo:MDString ;
+    bgo:hasAccount
+        resource:account_1
+.
+
+resource:p1_2 a bgo:AccountSet ;
+    bgo:label "subset 2" ;
+    bgo:title "Subset 2 title"
+.
+
+
+#### P2 ###########
+resource:p2 a bgo:Partition;
+	bgo:partitionId "2" ;
+	bgo:label "partition2" ;
+	bgo:title "P2 title" ;
+    bgo:hasAccountSubSet
+        resource:p2_1 ,
+        resource:p2_2
+
+    ;
+
+
+    # Note no default partition is present : a default one should be create with title "Unassigned"
+.
+

@@ -7,9 +7,7 @@ Semantic Web application profiles, ontologies and controlled vocabularies used i
 
 Application profiles are restrictions to the usage of existing ontologies designed for a specific applications family
 
-- **[fr-ap](fr-ap/)**: an application  profile to annotate financial report. 
-   This profile is used by financial report visualization application 
-   (es. https://budget.g0v.it and https://inps.g0v.it ).
+- **[fr-ap](fr-ap/)**: an application  profile to annotate public administration Financial reports. 
 
 ## ontologies and controlled vocabularies
 

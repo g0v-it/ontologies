@@ -1,3 +1,2 @@
-.cache/
-.project
-distrib/
+**.project
+**.settings/

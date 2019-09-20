@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+###
+# A docker suite to practice with g0v fr-ap 
+# docker run -d -p 8080:8080 -v $PWD/.:/workspace --name kb linkeddatacenter/sdaas-ce
+# docker exec -ti kb sdaas -f run_tests.sdaas --reboot
+##
+set -a
+SD_INCLUDE testing
+
+####################################################
+SD_LOG  "Loading external resources..."
+####################################################
+SD_LEARN http://publications.europa.eu/resource/authority/currency/EUR
+SD_LEARN http://reference.data.gov.uk/id/gregorian-interval/2014-01-01T00:00:00/P1Y
+
+####################################################
+SD_LOG  "Loading example data..."
+####################################################
+SD_LEARN urn:fr:facts examples/data/fr.ttl
+
+
+####################################################
+SD_LOG  "Reasoning..."
+####################################################
+SD_SPARQL_UPDATE @examples/axioms/fr_axioms.update
+
+SD_DATA_TEST examples/tests
+
+
+####################################################
+#SD_LOG  "mapping fr-ap to bgo ontology..."
+####################################################
+#SD_LEARN urn:bgo examples/data/bgo_config.ttl
+#SD_SPARQL_UPDATE @examples/axioms/bgo_mapping_rules.update
+
+
+####################################################
+#SD_LOG  "saving LODMAP2D datastream in ditrib/data.ttl..."
+####################################################
+mkdir -p distrib
+#SD_SPARQL_QUERY "text/turtle" "CONSTRUCT{?s?p?o}WHERE{GRAPH<urn:bgo>{?s?p?o}}" | rapper -q -i turtle -o turtle - urn:bgo > distrib/data.ttl
+
+
+
+SD_THATS_ALL_FOLKS

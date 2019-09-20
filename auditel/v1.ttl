@@ -1,1 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix auditel: <https://g0v-it.github.io/ontologies/auditel#> .
+
+
+# -- Data structure definitions ----------------------------
+
+auditel:rilevazioni_auditel a qb:DataStructureDefinition ;
+	qb:component 
+        [ qb:dimension auditel:refPeriod ; qb:componentRequired "true"^^xsd:boolean; qb:componentAttachment qb:DataSet],
+        [ qb:dimension auditel:context ; qb:componentRequired "true"^^xsd:boolean],
+        [ qb:measure auditel:audience],
+        [ qb:measure auditel:share],
+        [ qb:measure auditel:rating]
+.
+
+                   
+# -- Dimensions and measures  ----------------------------
+
+auditel:refPeriod  a rdf:Property, qb:DimensionProperty;
+    rdfs:label "reference period"@en;
+    rdfs:subPropertyOf sdmx-dimension:refPeriod;
+    rdfs:range time:DateTimeInterval;
+    qb:concept sdmx-concept:refPeriod ;
+    .
+auditel:context a rdf:Property, qb:DimensionProperty;
+    rdfs:label "Auditel measuring context"@en;
+    rdfs:range skos:Concept
+    .
+auditel:audience a rdf:Property, qb:MeasureProperty;
+    rdfs:label "audience"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:nonNegativeInteger ;
+    .
+auditel:share a rdf:Property, qb:MeasureProperty;
+    rdfs:label "share"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:float ;
+    .
+auditel:rating a rdf:Property, qb:MeasureProperty;
+    rdfs:label "rating"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:float ;
+    .
+
 	

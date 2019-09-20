@@ -4,6 +4,8 @@ AGCOM vocabulary
 [AGCOM](http://agicom.it/) collects periodic records about the presence of politicians in main TV shows;
 the agcom vocabulary describe the terms to annotate AGICOM data.
 
+This vocabulary define some terms used by g0v application derived from some AGCOM concepts.
+
 The namespace for agcom vocabulary is **http://g0v-it.github.io/ontologies/agcom#**
 
 Last Turtle RDF serialization is available in https://g0v-it.github.io/ontologies/agcom/v1.ttl
@@ -14,6 +16,7 @@ The agcom vocabulary is a semantic web application that builds upon the followin
 - the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat/) to describe the dataset metadata
 - the [SKOS](https://www.w3.org/TR/skos-primer) to describe balance taxonomy.
 - the [DCMI Metadata Terms](http://dublincore.org/documents/dcmi-terms/)
+- the [W3C time ontology](https://www.w3.org/TR/owl-time/)
 - some facilities from [sdmx ontologies](https://sdmx.org/)
 
 All specific [SKOS taxonomies](https://www.w3.org/TR/skos-primer/), derived from the [Contratto di appalto servizio di monitoraggio delle trasmissioni televisive delle emittenti nazionali riferito alle aree del pluralismo socio/politico, delle garanzie dell'utente, degli obblighi specifici del servizio pubblico radiotelevisivo - CIG 4977351FF7](https://www.agcom.it/documentazione/documento?p_p_auth=fLw7zRht&p_p_id=101_INSTANCE_ls3TZlzsK0hm&p_p_lifecycle=0&p_p_col_id=column-1&p_p_col_count=1&_101_INSTANCE_ls3TZlzsK0hm_struts_action=%2Fasset_publisher%2Fview_content&_101_INSTANCE_ls3TZlzsK0hm_assetEntryId=4658125&_101_INSTANCE_ls3TZlzsK0hm_type=document) document.
@@ -35,7 +38,8 @@ Following dimensions are defined:
 
 Following properties are defined: 
 
-- refPeriod: the observation period in witch the speakingTime metric is calculated, expressed as [time interval](http://reference.data.gov.uk/def/intervals)
+- refPeriod: the observation period in witch the speakingTime metric is calculated, expressed as a time:DateTimeInterval and possibly using one of the class
+exposed in the [time intervals ontology](http://reference.data.gov.uk/def/intervals/)
 
 
 In this snippet describes an AGCOM observation as linked data:
@@ -50,6 +54,7 @@ In this snippet describes an AGCOM observation as linked data:
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
 @prefix agcom: <https://g0v-it.github.io/ontologies/agcom#> .
 @prefix resource: <http://agcom.linkeddata.cloud/resource/> . 

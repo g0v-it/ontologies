@@ -1,0 +1,63 @@
+##
+## A sample knowledge base dump compliant with g0v fr-ap
+##
+@prefix fr: <http://linkeddata.center/botk-fr/v1#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix resource: <https://data.inps.g0v.it/resource/> .
+
+
+###########################
+# Dataset metadata
+###########################
+resource:2888_report a fr:FinancialReport;
+	fr:refPeriod <http://reference.data.gov.uk/id/gregorian-interval/2014-01-01T00:00:00/P1Y> ;
+	sdmx-attribute:unitMeasure <http://publications.europa.eu/resource/authority/currency/EUR> ;
+	dct:title "Entrate 2014"@it ;
+	dct:source <https://www.inps.it/NuovoportaleINPS/default.aspx?itemdir=46772&ifaccettaargomento=51&ifaccettaperiodo=72&iiddataset=924> 
+.
+
+#######################################
+# observations
+#######################################
+resource:2888_E101001_fact a fr:Fact;
+	qb:dataSet resource:2888_report ;
+	fr:concept resource:2888_E101001;
+	fr:amount 123209336318.55	
+.
+
+resource:2888_E101002_fact a fr:Fact;
+	qb:dataSet resource:2888_report ;
+	fr:concept resource:2888_E101002;
+	fr:amount 1015967855.23	
+.
+	
+
+#######################################
+# Concepts schema (4 levels)
+#######################################
+resource:2888_E101001 a skos:Concept ;
+	skos:prefLabel "CONTRIBUTI PER I LAVORATORI DIPENDENTI"@it ;
+	skos:broader resource:2888_E101 
+.
+
+resource:2888_E101002 a skos:Concept ;
+	skos:prefLabel "CONTRIBUTI PER I LAVORATORI DOMESTICI"@it ;
+	skos:broader resource:2888_E101 
+.
+
+resource:2888_E101 a skos:Concept ;
+	skos:prefLabel "Aliquote contributive a carico dei datori di lavoro"@it ;
+	skos:broader resource:2888_E1 
+.
+
+resource:2888_E1 a skos:Concept ;
+	skos:prefLabel "entrate contributive"@it ;
+	skos:broader resource:2888_E 
+.
+
+resource:2888_E a skos:Concept ;
+	skos:prefLabel "entrate"@it
+.
