@@ -1,0 +1,26 @@
+@prefix fr: <http://linkeddata.center/botk-fr/v1#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix : <#>.
+
+:2018_budget_report a fr:FinancialReport ;
+	fr:refPeriod <http://reference.data.gov.uk/id/gregorian-interval/2019-01-01T00:00:00/P1Y> ;
+	sdmx-attribute:unitMeasure <http://publications.europa.eu/resource/authority/currency/EUR> 
+.
+	
+:ABCD1_fact a fr:Fact;
+	fr:concept :ABCD1 ;
+	qb:dataSet :2018_budget_report ;
+	fr:amount 200000000000.00	.
+
+:ABCD2_fact a fr:Fact;
+	fr:concept :ABCD2 ;
+	qb:dataSet :2018_budget_report ;
+	fr:amount 881493000.00	.
+	
+:ABCD1 skos:broader :ABCD .
+:ABCD2 skos:broader :ABCD .
+:ABCD skos:broader :ABC .
+:ABC skos:broader :AB .
+:AB skos:broader :A .

@@ -1,12 +1,6 @@
-##################################
-# Test fr-ap Financtial report constraints
-################################## 
 PREFIX fr: <http://linkeddata.center/botk-fr/v1#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#> 
-PREFIX dcat: <http://www.w3.org/ns/dcat#> 
 
 ASK {
     ?scheme a skos:ConceptScheme.
