@@ -1,10 +1,10 @@
 g0v fr-ap: a financial report application profile
 =================================================
 
-g0v fr-ap is a language profile based on [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) (fr) suitable to annotate government data 
+g0v fr-ap is a profile of the [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) (fr) suitable to annotate government data 
 with the purpose of supporting budget visualization applications (e.g. http://budget.g0v.it/).  
 
-It captures different perspectives of a government financial report (e.g. a buget) like historical trends, cross-department and component breakdown of tax by government. 
+It captures different perspectives of a government financial report (e.g. a budget) like historical trends, cross-department and component breakdown of tax by government. 
 
 
 g0v fr-ap is a semantic web application that builds upon the following RDF vocabularies: 
@@ -21,12 +21,12 @@ g0v fr-ap also reuses some individual references to linked open data provided by
 
 ## Axioms
 
-g0v fr-ap adds these restrictions to the fr ontology:
+g0v fr-ap adds some restrictions to the fr ontology:
 
-- the financial report is equivalent to a taxonomy of related concepts (skos:ConceptScheme) ;
-- fr:concept is an inverse functional property 
+- the financial report structure is described by a taxonomy of related concepts (skos:ConceptScheme) ;
+- fr:concept MUST be considered as a an inverse functional property 
 - a fact exposes exactly a fr:amount property, if not provided, *fr:amount 0.000* must be inferred ;
-- the fr:amount of a component is the sum of the amounts of underlining facts ;
+- the fr:amount of a component is always the sum of the amounts of underlining facts ;
 - concepts in a financial report can be linked to concepts in other financial reports using skos:closeConcept property
 
 Corollaries:
@@ -34,8 +34,8 @@ Corollaries:
 - the taxonomy has a hierarchical tree structure;
 - the taxonomy and the financial report structural share the same structure
 - each fact is related to a leaf of the taxonomy tree;
-- the components of a financial report can be derived by facts and taxonomy
-- close concepts allow to infer the fact history and trends.
+- the components of a financial report can be inferred from facts and taxonomy
+- skos:closeConcept property allows to infer the fact history and trends.
 
 Semantic relationships are crucial to the definition of concepts. However, next to these structured characterizations, concepts sometimes have to be further defined using human-readable ("informal") documentation:
 
