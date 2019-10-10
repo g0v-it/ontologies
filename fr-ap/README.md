@@ -55,7 +55,7 @@ This picture summarize the g0v fr-ap restrictions and conventions:
 
 This snippet (in RDF turtle format) describes a provisional financial report as linked data with FR:
 
-```
+```turtle
 @prefix fr: <http://linkeddata.center/botk-fr/v1#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
@@ -86,8 +86,7 @@ This snippet (in RDF turtle format) describes a provisional financial report as 
 
 A reasoner that is able to understand g0v fr-ap should able to infer these properties:
 
-```
-
+```turtle
 :ABCD1_fact a qb:Observation;
 	fr:refPeriod <http://reference.data.gov.uk/id/gregorian-interval/2018-01-01T00:00:00/P1Y> ;
 	fr:unit <http://publications.europa.eu/resource/authority/currency/EUR> ;
