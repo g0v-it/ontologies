@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id/g0v/it/mef#"
+     xml:base="http://w3id/g0v/it/mef"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:fr="http://linkeddata.center/botk-fr/v1#"
+     xmlns:qb="http://purl.org/linked-data/cube#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:dpo="http://dbpedia.org/ontology/"
+     xmlns:mef="http://w3id/g0v/it/mef#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:interval="http://reference.data.gov.uk/def/intervals/"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
+     xmlns:sdmx-code="http://purl.org/linked-data/sdmx/2009/code#"
+     xmlns:sdmx-measure="http://purl.org/linked-data/sdmx/2009/measure#"
+     xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
+     xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#">
+    <owl:Ontology rdf:about="http://w3id/g0v/it/mef">
+        <owl:imports rdf:resource="http://linkeddata.center/botk-fr/v1"/>
+        <dc:creator xml:lang="en">Enrico Fagnoni enrico@linkeddata.center</dc:creator>
+        <dc:date>2019-10-09</dc:date>
+        <dc:description rdf:resource="https://g0v-it.github.io/ontologies/mef/uml-diagram.png"/>
+        <dc:description xml:lang="en">captures the &quot;Legge di Bilancio&quot; (i.e. the Italian expense budget) published by the &quot;Ministero della Economia e Finanze&quot; in 
+its three release states : *Rendiconto*, *Legge di Bilancio*, *Disegno di legge di Bilancio* (i.e. consolidated, budget, previsional budget) 
+
+It implements a four level taxonomy based on *minestero*-&gt;*missione*-&gt;*programma*-&gt;*azione*-&gt;*capitolo di spesa* hierarchy.
+
+The last level of the taxonomy (*capitolo di spesa*) represent the financial facts.
+
+The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://www.w3.org/2004/02/skos/core vocabularies</dc:description>
+        <dc:rights xml:lang="en">The g0v-it mef  vocabulary is available under the Creative Commons Attribution 4.0 . This work is based on the botk-fr ontology, developed by Enrico Fagnoni @ http://linkeddata.center/</dc:rights>
+        <dc:title xml:lang="en">An ontology to annotate Italian MEF reports</dc:title>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <rdfs:label xml:lang="en">G0V MEF vocabulary</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://it.linkeddata.center/p/lodmap2d"/>
+        <owl:versionInfo>v 1.0.0</owl:versionInfo>
+        <foaf:homepage rdf:resource="https://g0v-it.github.io/ontologies/mef"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id/g0v/it/mef#hasSearchPane -->
+
+    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasSearchPane"/>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#hasTagCloud -->
+
+    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTagCloud"/>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#hasTooltip -->
+
+    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTooltip"/>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#hasTotalizer -->
+
+    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTotalizer"/>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#hasTrendColorScheme -->
+
+    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTrendColorScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Azione -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Azione">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Programma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Capitolo -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Capitolo">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Fact"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Azione"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Concept -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Concept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/linked-data/cube#dataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio">
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#FinancialReport -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#FinancialReport">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#LeggeDiBilancio -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#LeggeDiBilancio">
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Ministero -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Ministero">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Missione -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Missione">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Ministero"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Programma -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Programma">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Missione"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#RendicontoFinanaziario -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#RendicontoFinanaziario">
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string">
+        <rdfs:comment xml:lang="en">A jerarchic path description</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
