@@ -29,7 +29,7 @@
     <owl:Ontology rdf:about="http://w3id/g0v/it/mef">
         <owl:imports rdf:resource="http://linkeddata.center/botk-fr/v1"/>
         <dc:creator xml:lang="en">Enrico Fagnoni enrico@linkeddata.center</dc:creator>
-        <dc:date>2019-10-09</dc:date>
+        <dc:date>2019-11-09</dc:date>
         <dc:description rdf:resource="https://g0v-it.github.io/ontologies/mef/uml-diagram.png"/>
         <dc:description xml:lang="en">captures the &quot;Legge di Bilancio&quot; (i.e. the Italian expense budget) published by the &quot;Ministero della Economia e Finanze&quot; in 
 its three release states : *Rendiconto*, *Legge di Bilancio*, *Disegno di legge di Bilancio* (i.e. consolidated, budget, previsional budget) 
@@ -159,7 +159,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Azione">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
@@ -175,7 +175,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Capitolo">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Fact"/>
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
@@ -187,26 +187,10 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
-    <!-- http://w3id/g0v/it/mef#Concept -->
-
-    <owl:Class rdf:about="http://w3id/g0v/it/mef#Concept">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/linked-data/cube#dataSet"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     </owl:Class>
     
 
@@ -223,7 +207,6 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#LeggeDiBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     </owl:Class>
     
 
@@ -232,7 +215,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Ministero">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
     </owl:Class>
     
 
@@ -241,7 +224,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Missione">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Concept"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
@@ -257,7 +240,6 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Programma">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
@@ -273,14 +255,21 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#RendicontoFinanaziario">
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     </owl:Class>
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+    <!-- http://w3id/g0v/it/mef#Sezione -->
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Sezione">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/linked-data/cube#dataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 

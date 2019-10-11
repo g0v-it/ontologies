@@ -1,7 +1,7 @@
 g0v fr-ap: a financial report application profile
 =================================================
 
-g0v fr-ap is a profile of the [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) (fr) suitable to annotate government data 
+g0v fr-ap is a profile of the [Financial Report Vocabulary](http://linkeddata.center/botk-fr/v1) suitable to annotate government data 
 with the purpose of supporting budget visualization applications (e.g. http://budget.g0v.it/).  
 
 It captures different perspectives of a government financial report (e.g. a budget) like historical trends, cross-department and component breakdown of tax by government. 
@@ -40,7 +40,7 @@ Corollaries:
 Semantic relationships are crucial to the definition of concepts. However, next to these structured characterizations, concepts sometimes have to be further defined using human-readable ("informal") documentation:
 
 - each financial report should have a dct:title 
-- the source document from witch the financial report is extracted should be annotated with dct:source attribute
+- the source document from witch the financial concept is derived should be annotated with dct:source attribute
 - each financial report short description should annotated with dct:description
 - each financial report detailed description should annotated with dct:abstract
 - each concept has should have at least a skos:prefLabel attribute
