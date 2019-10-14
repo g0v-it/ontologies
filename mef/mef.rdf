@@ -158,13 +158,36 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#Azione -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Azione">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#BudgetComponent"/>
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Programma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#Budget -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#Budget">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id/g0v/it/mef#BudgetComponent -->
+
+    <owl:Class rdf:about="http://w3id/g0v/it/mef#BudgetComponent">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/linked-data/cube#dataSet"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Budget"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -190,15 +213,9 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#DisegnoLeggeDiBilancio">
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id/g0v/it/mef#FinancialReport -->
-
-    <owl:Class rdf:about="http://w3id/g0v/it/mef#FinancialReport">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Budget"/>
+        <rdfs:label xml:lang="it">Disegno di legge di bilancio</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.bdap.tesoro.it/sites/openbdap/cittadini/bilancideglienti/bilanciofinanziariostato/DisegnodiLegge"/>
     </owl:Class>
     
 
@@ -206,7 +223,9 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#LeggeDiBilancio -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#LeggeDiBilancio">
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Budget"/>
+        <rdfs:label xml:lang="it">Legge di Bilancio</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.bdap.tesoro.it/sites/openbdap/cittadini/bilancideglienti/bilanciofinanziariostato/leggedibilancio"/>
     </owl:Class>
     
 
@@ -214,7 +233,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#Ministero -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Ministero">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#BudgetComponent"/>
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
     </owl:Class>
     
@@ -223,7 +242,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#Missione -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Missione">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#BudgetComponent"/>
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Sezione"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -239,7 +258,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#Programma -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Programma">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#BudgetComponent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
@@ -254,7 +273,9 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- http://w3id/g0v/it/mef#RendicontoFinanaziario -->
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#RendicontoFinanaziario">
-        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+        <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Budget"/>
+        <rdfs:label xml:lang="it">Rendiconto spese</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/rendiconto/index.html"/>
     </owl:Class>
     
 
@@ -266,7 +287,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/linked-data/cube#dataSet"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#FinancialReport"/>
+                <owl:onClass rdf:resource="http://w3id/g0v/it/mef#Budget"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
