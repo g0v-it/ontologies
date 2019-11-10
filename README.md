@@ -1,13 +1,9 @@
+![copernicani](https://copernicani.it/wp-content/uploads/cropped-logo_orizzontale_trasparente-1-e1525161268864.png)
+
 g0v-it ontologies
 ==================
-Semantic Web application profiles, ontologies and controlled vocabularies used in g0v-it projects.
+Semantic Web ontologies and controlled vocabularies used in g0v-it projects.
 
-
-## Application profiles
-
-Application profiles are restrictions to the usage of existing ontologies designed for a specific applications family
-
-- **[fr-ap](fr-ap/)**: an application  profile to annotate public administration Financial reports. 
 
 ## Ontologies and controlled vocabularies
 
@@ -17,9 +13,9 @@ g0v-it projects try to reuse existing ontologies.
 
 Following new vocabularies are defined:
 
-- [mef](mef/): a vocabulary to annotate the *Legge di Bilancio* and other MEF reports
-- [agcom](): a vocabulary to annotate AGCOM data
-- [auditel](): a vocabulary to annotate AUDITEL data
+- [mef](mef/): a vocabulary to annotate the Italian Budget and other e-Government reports
+- [agcom](): a vocabulary to annotate AGCOM data TBD
+- [auditel](): a vocabulary to annotate AUDITEL data TBD
 
 
 ## License
