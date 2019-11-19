@@ -14,8 +14,8 @@ g0v-it projects try to reuse existing ontologies.
 Following new vocabularies are defined:
 
 - [mef](mef/): a vocabulary to annotate the Italian Budget and other e-Government reports
-- [agcom](): a vocabulary to annotate AGCOM data TBD
-- [auditel](): a vocabulary to annotate AUDITEL data TBD
+- agcom: a vocabulary to annotate AGCOM data TBD
+- auditel: a vocabulary to annotate AUDITEL data TBD
 
 
 ## License

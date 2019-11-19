@@ -99,18 +99,18 @@ A budget exposes some  classification scheme:
 
 **taxonomies building**
 
-```sparql-query
+```sparql
 CONSTRUCT {
 	?budget
-		mef:hasSchemeSMMPACP [  a skos:ConceptScheme; kos:hasTopConcept  ?spese ] ;
-		mef:hasSchemeSMRMP [  a skos:ConceptScheme; kos:hasTopConcept  ?spese ] ;
-		mef:hasSchemeSMTC [  a skos:ConceptScheme; kos:hasTopConcept  ?spese ] ;
-		mef:hasSchemeSTCCP [  a skos:ConceptScheme; kos:hasTopConcept  ?spese] ;
-		mef:hasSchemeSMP [  a skos:ConceptScheme; kos:hasTopConcept  ?spese ] ;
-		mef:hasSchemeETNT [ a skos:ConceptScheme; kos:hasTopConcept  ?entrate ] ;
-		mef:hasSchemeETTPCA [ a skos:ConceptScheme; kos:hasTopConcept  ?entrate ] 
+		mef:hasSchemeSMMPACP [  a skos:ConceptScheme; kos:hasTopConcept  ?spesa ] ;
+		mef:hasSchemeSMRMP [  a skos:ConceptScheme; kos:hasTopConcept  ?spesa ] ;
+		mef:hasSchemeSMTC [  a skos:ConceptScheme; kos:hasTopConcept  ?spesa ] ;
+		mef:hasSchemeSTCCP [  a skos:ConceptScheme; kos:hasTopConcept  ?spesa] ;
+		mef:hasSchemeSMP [  a skos:ConceptScheme; kos:hasTopConcept  ?spesa ] ;
+		mef:hasSchemeETNT [ a skos:ConceptScheme; kos:hasTopConcept  ?entrata ] ;
+		mef:hasSchemeETTPCA [ a skos:ConceptScheme; kos:hasTopConcept  ?entrata ] 
 }
-WHERE { ?budget mef:entrate ?entrate ; mef:uscite ?uscite }
+WHERE { ?budget mef:entrate ?entrata ; mef:spese ?spesa }
 
 
 
@@ -119,6 +119,7 @@ WHERE  {
 	{		
 		?concept a ?component; qb:dataSet/mef:hasSchemeSMMPACP ?scheme .
 		VALUES ?component {
+			mef:Spesa
 			mef:Ministero
 			mef:Missione
 			mef:Programma
@@ -131,6 +132,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeSMRMP ?scheme .
 		VALUES ?component {
+			mef:Spesa
 			mef:Ministero
 			mef:CentroResponsabilita
 			mef:Missione
@@ -141,6 +143,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeSMTC ?scheme  .
 		VALUES ?component {
+			mef:Spesa
 			mef:TitoloSpesa
 			mef:CategoriaSpesa
 		}
@@ -149,6 +152,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeSTCCP ?scheme  .
 		VALUES ?component {
+			mef:Spesa
 			mef:TitoloSpesa
 			mef:CategoriaSpesa
 			mef:CapitoloDiSpesa
@@ -159,6 +163,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeSMP ?scheme  .
 		VALUES ?component {
+			mef:Spesa
 			mef:Missione
 			mef:Programma
 		}		
@@ -167,6 +172,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeETNT ?scheme  .
 		VALUES ?component {
+			mef:Entrata
 			mef:TitoloEntrata
 			mef:Natura
 			mef:Tipologia
@@ -176,6 +182,7 @@ WHERE  {
 	{
 		?concept a ?component; qb:dataSet/mef:hasSchemeETTPCA ?scheme  .
 		VALUES ?component {
+			mef:Entrata
 			mef:TitoloEntrata
 			mef:Tipologia
 			mef:Provento
@@ -190,7 +197,7 @@ WHERE  {
 
 **The value of the component metrics is computed as the sum of the related facts**
 
-```sparql-query
+```sparql
 CONSTRUCT { 
 	?component 
 		mef:competenza ?competenzaSum ;
