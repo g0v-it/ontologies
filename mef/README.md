@@ -40,31 +40,6 @@ You can also access this ontology with these tools::
 - edit *g0v mef ontology* with [Standford University Protégeè](https://protege.stanford.edu/)
 
 
-
-## Italian budget life cycle
-
-The Italian budget exists in three main states that evolve by releases:
-
--  *Disegno di Legge di Bilancio*: published yearly by the Italian government (usually at the beginning of November) and presented to the Italian Parliament and to the EU commission for approval.
-- *Legge di Bilancio*: approved by the Italian Parliament usually before the end of the year
-- *Rendiconto*: approved by the Italian Parliament as a consolidated view of the budget data
-
-In each state more than one version can be published.
-To capture this life cycle, mef vocabulary adheres to [Semantic Versioning](http://semver.org/) with some additional constraints:
-
-- MAJOR version number refers to the reference year of the financial document,
-- MINOR version number refers to the main budget state: 
-    - **0** means *Disegno di Legge di Bilancio*, 
-    - **1** means *Legge di Bilancio*, 
-    - **2** means *Rendiconto*
-- PATCH version number refers to a document release (0 is the first release) 
-
-e.g.:
-
-- *2020.0.0* means the first release of *Disegno di Legge di Bilancio* relative to 2020 year as published in Nov. 2019)
-- *2019.1.0* means the first release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament ( in Dec. 2018)
-- *2018.2.0* means first release of *Rendiconto* relative to 2018 year as approved by the Italian Parliament (in 2019)
-
  
 ## The mef vocabulary
 
@@ -74,14 +49,38 @@ The namespace for *g0v mef ontology* is *http://w3id.org/g0v/it/mef#* and the su
 
 ![UML diagram](uml-diagram.png)
 
-### Mapping the Financial Report ontology
 
-- **mef:StructuralComponents** is an extension of fr:StructuralComponents that exports three distinct metrics as sub-properties of fr:amount
-- a **mef:Budget** is an extension of fr:FinancialReport exposing mef:budgetVersion a sub-properties of fr:versionId. 
-- the *mef:competenza* property is to be considered a sub-property of *fr:amount*
-- *mef:cassa* and *mef:residui are two additional metrics that share the same value propagation behaviour of the *fr:amount* property
 
-### Mapping SKOS
+The Italian budget (mef:Budget) exists in three main states that evolve by releases:
+
+-  *Disegno di Legge di Bilancio* (mef:DisegnoLeggeBilancio): published yearly by the Italian government (usually at the beginning of November) and presented to the Italian Parliament and to the EU commission for approval.
+- *Legge di Bilancio* (mef:LeggeBilancio): approved by the Italian Parliament usually before the end of the year
+- *Rendiconto* (mef:Rendiconto): approved by the Italian Parliament as a consolidated view of the budget data
+
+In each state more than one release  can be published.
+
+ **mef:Budget** is an extension of fr:FinancialReport  
+
+To capture this life cycle, fr:versionId uses the convention <YEAR><REPORT TYPE>[RELEASE]:
+
+- <YEAR> refers to the reference year of the financial document,
+- <REPORT TYPE> refers to the main budget state: 
+    - **DB** means *Disegno di Legge di Bilancio*, 
+    - **LB** means *Legge di Bilancio*, 
+    - **RB** means *Rendiconto*
+- [RELEASE] refers to an optional document release  
+
+e.g.:
+
+- *2020DB* means the first release of *Disegno di Legge di Bilancio* relative to 2020 year as published in Nov. 2019)
+- *2019LB* means the first release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament ( in Dec. 2018)
+- *2018RB* means first release of *Rendiconto* relative to 2018 year as approved by the Italian Parliament (in 2019)
+
+
+### Mappings
+
+- **mef:StructuralComponents** is an extension of fr:StructuralComponents that exports three distinct metrics 
+- the *mef:competenza*, *mef:cassa* and *mef:residui are qb monetary metrics always expressed in EURO
 
 - **mef:StructuralComponent** is a skos:Concept
 - **mef:Budget** is a skos:ConceptScheme
@@ -92,8 +91,9 @@ The namespace for *g0v mef ontology* is *http://w3id.org/g0v/it/mef#* and the su
 
 #### Taxonomies
 
-Every budget is a taxonomy that includes a set of budget taxonomies. The budget top level Concepts are the administrations (i.e. Ministeri).
-A budget taxonomy is identified by a letter (ie. mef:budgetTaxonomyId)
+Every budget is a complex. The budget top level Concepts are the administrations (i.e. Ministeri).
+
+The same budget component can belong to different taxonomies identified by a letter (ie. mef:budgetTaxonomyId)
 
 The budget taxonomy always includes:
 
