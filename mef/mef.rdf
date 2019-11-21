@@ -27,8 +27,6 @@
      xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
      xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#">
     <owl:Ontology rdf:about="http://w3id/g0v/it/mef">
-        <owl:imports rdf:resource="http://linkeddata.center/botk-fr/v1"/>
-        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <dc:creator xml:lang="en">Enrico Fagnoni enrico@linkeddata.center</dc:creator>
         <dc:date>2019-11-19</dc:date>
         <dc:description rdf:resource="https://g0v-it.github.io/ontologies/mef/uml-diagram.png"/>
@@ -128,6 +126,12 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://linkeddata.center/botk-fr/v1#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkeddata.center/botk-fr/v1#isPartOf"/>
     
 
 
@@ -285,6 +289,18 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
+    <!-- http://linkeddata.center/botk-fr/v1#versionId -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/botk-fr/v1#versionId"/>
+    
+
+
+    <!-- http://purl.org/linked-data/sdmx/2009/measure#obsValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    
+
+
     <!-- http://w3id/g0v/it/mef#cassa -->
 
     <owl:DatatypeProperty rdf:about="http://w3id/g0v/it/mef#cassa">
@@ -309,6 +325,12 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -317,6 +339,30 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://linkeddata.center/botk-fr/v1#Component -->
+
+    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#Component"/>
+    
+
+
+    <!-- http://linkeddata.center/botk-fr/v1#Fact -->
+
+    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#Fact"/>
+    
+
+
+    <!-- http://linkeddata.center/botk-fr/v1#FinancialReport -->
+
+    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
+    
+
+
+    <!-- http://linkeddata.center/botk-fr/v1#StructuralComponent -->
+
+    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#StructuralComponent"/>
     
 
 
@@ -747,6 +793,12 @@ cause (conto generale del patrimonio).
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
     
 
 
