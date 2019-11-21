@@ -359,7 +359,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://w3id/g0v/it/mef#PianoDiGestione"/>
-        <rdfs:comment xml:lang="it">Suddivisione dle capitolo di spesa</rdfs:comment>
+        <rdfs:comment xml:lang="it">Suddivisione del capitolo entrate. Rappresenta l&apos;elemento fattuale di entrata più dettagliato del Bilancio dello Stato</rdfs:comment>
         <rdfs:label xml:lang="it">Articolo</rdfs:label>
     </owl:Class>
     
@@ -559,6 +559,8 @@ vigente e tenuto conto dei parametri indicati nel documento di economia e finanz
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Entrata">
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Component"/>
+        <rdfs:comment xml:lang="it">Rappresenta il componente del budget che raccoglie tutte le entrate relative all&apos;anno di esercizio</rdfs:comment>
+        <rdfs:label xml:lang="it">Totale Entrate</rdfs:label>
     </owl:Class>
     
 
@@ -670,7 +672,7 @@ presentato in base alle Missioni a partire dal 2008.</rdfs:comment>
                 <owl:onClass rdf:resource="http://w3id/g0v/it/mef#CapitoloDiSpesa"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="it">Suddivisione del capitolo di spesa</rdfs:comment>
+        <rdfs:comment xml:lang="it">Suddivisione del capitolo di spesa. Rappresenta l&apos;elemento fattuale di spesa più dettagliato presente nel  Bilancio dello Stato</rdfs:comment>
         <rdfs:label xml:lang="it">Piano di Gestione</rdfs:label>
     </owl:Class>
     
@@ -733,6 +735,8 @@ cause (conto generale del patrimonio).
 
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Spesa">
         <rdfs:subClassOf rdf:resource="http://w3id/g0v/it/mef#Component"/>
+        <rdfs:comment xml:lang="it">Rappresenta il componente del budget che raccoglie tutte le spese relative all&apos;anno di esercizio</rdfs:comment>
+        <rdfs:label xml:lang="it">Spesa totale</rdfs:label>
     </owl:Class>
     
 
