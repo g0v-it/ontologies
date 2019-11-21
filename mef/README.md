@@ -37,7 +37,8 @@ You can access this ontology with:
  
 ## The mef vocabulary
 
-The mef Vocabulary extends the [Financial Report](http://linkeddata.center/botk-fr/v1) and [SKOS](http://www.w3.org/2004/02/skos/core) vocabularies.
+The mef Vocabulary extends the [Financial Report](http://linkeddata.center/botk-fr/v1), the [SKOS](http://www.w3.org/2004/02/skos/core), and
+the [DCAT](https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0) (according with DCAT-AP_IT v1.0 profile) vocabularies.
 
 The namespace for *g0v mef ontology* is *http://w3id.org/g0v/it/mef#* and the suggested prefix is *mef:*
 
@@ -54,20 +55,21 @@ In each state more than one release  can be published.
 
 **mef:Budget** is an extension of fr:FinancialReport  
 
-To capture this life cycle, fr:versionId uses the convention <YEAR><REPORT TYPE>[RELEASE]:
+To capture this life cycle, fr:versionId uses the convention <YEAR><REPORT TYPE>:
 
 - <YEAR> refers to the reference year of the financial document,
 - <REPORT TYPE> refers to the main budget state: 
     - **DB** means *Disegno di Legge di Bilancio*, 
-    - **LB** means *Legge di Bilancio*, 
-    - **RB** means *Rendicont Bilancioo*
-- [RELEASE] refers to an optional document release  
+    - **LB** means *Legge di Bilancio*,  
+    - **PA** means *Previsioni di assestamento*, 
+    - **RB** means *Rendiconto Bilancio*
+
 
 e.g.:
 
-- *2020DB* means the first release of *Disegno di Legge di Bilancio* relative to 2020 year as published in Nov. 2019)
-- *2019LB* means the first release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament ( in Dec. 2018)
-- *2018RB2* means release 2 of *Rendiconto* relative to 2018 year as approved by the Italian Parliament (in 2019)
+- *2020DB* means the *Disegno di Legge di Bilancio* relative to 2020 year as published in Nov. 2019)
+- *2019LB* means the release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament ( in Dec. 2018)
+- *2018RB* means Rendiconto* of 2018 year as approved by the Italian Parliament (in 2019)
 
 
 ### Restrictions & Mappings
@@ -81,6 +83,7 @@ e.g.:
 - **mef:StructuralComponents** in different **mef:Budget** with the same skos:notation should be considered related with skos:closeConcept properties;
 - a **mef:StructuralComponents** can be skos:inScheme of one or more taxonomies exposed by **mef:Budget**;
 - in mev:Budget **fr:versionId** is a sub-property of dct:identifier
+- a bef:bilancio is a subclass of dcat:Dataset
 
 
 ### Taxonomies
