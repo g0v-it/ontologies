@@ -229,42 +229,12 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
-    <!-- http://w3id/g0v/it/mef#hasSearchPane -->
-
-    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasSearchPane"/>
-    
-
-
-    <!-- http://w3id/g0v/it/mef#hasTagCloud -->
-
-    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTagCloud"/>
-    
-
-
     <!-- http://w3id/g0v/it/mef#hasTaxonomy -->
 
     <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTaxonomy">
         <rdfs:domain rdf:resource="http://w3id/g0v/it/mef#Budget"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://w3id/g0v/it/mef#hasTooltip -->
-
-    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTooltip"/>
-    
-
-
-    <!-- http://w3id/g0v/it/mef#hasTotalizer -->
-
-    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTotalizer"/>
-    
-
-
-    <!-- http://w3id/g0v/it/mef#hasTrendColorScheme -->
-
-    <owl:ObjectProperty rdf:about="http://w3id/g0v/it/mef#hasTrendColorScheme"/>
     
 
 
