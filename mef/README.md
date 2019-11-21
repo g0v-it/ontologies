@@ -78,6 +78,7 @@ e.g.:
 - **fr:isPartOf** should be considered as a sub-property of skos:broaderTransitive;
 - **mef:StructuralComponents** in different **mef:Budget** with the same skos:notation should be considered related with skos:closeConcept properties;
 - a **mef:StructuralComponents** can be skos:inScheme of one or more taxonomies exposed by **mef:Budget**;
+- in mev:Budget **fr:versionId** is a sub-property of dct:identifier
 
 
 ### Taxonomies
