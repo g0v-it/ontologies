@@ -35,16 +35,13 @@
         <dc:description xml:lang="en">captures the &quot;Legge di Bilancio&quot; (i.e. the Italian expense budget) published by the &quot;Ministero della Economia e Finanze&quot; in 
 its three release states : *Rendiconto*, *Legge di Bilancio*, *Disegno di legge di Bilancio* (i.e. consolidated, budget, previsional budget) 
 
-It implements a four level taxonomy based on *minestero*-&gt;*missione*-&gt;*programma*-&gt;*azione*-&gt;*capitolo di spesa* hierarchy.
-
-The last level of the taxonomy (*capitolo di spesa*) represent the financial facts.
-
 The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://www.w3.org/2004/02/skos/core vocabularies</dc:description>
         <dc:rights xml:lang="en">The g0v-it mef  vocabulary is available under the Creative Commons Attribution 4.0 . This work is based on the botk-fr ontology, developed by Enrico Fagnoni @ http://linkeddata.center/</dc:rights>
         <dc:title xml:lang="en">An ontology to annotate Italian MEF reports</dc:title>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <rdfs:label xml:lang="en">G0V MEF vocabulary</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://it.linkeddata.center/p/lodmap2d"/>
+        <owl:versionInfo xml:lang="en">unstable</owl:versionInfo>
         <owl:versionInfo>v 1.0.0</owl:versionInfo>
         <foaf:homepage rdf:resource="https://g0v-it.github.io/ontologies/mef"/>
     </owl:Ontology>

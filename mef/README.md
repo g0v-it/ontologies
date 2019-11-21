@@ -4,6 +4,8 @@
 g0v mef ontology
 ==============
 
+Status: **unstable**
+
 The [Italian budget](https://openbdap.mef.gov.it/it/BdS) is a set of living financial reports defined by the Italian Government in the scope of the *[manovra finanziaria](https://openbdap.mef.gov.it/it/Home/LaManovra)*.
 
 The *g0v mef ontology* is a conceptual model developed by the [g0v.it civic hacking team](https://g0v.it)
