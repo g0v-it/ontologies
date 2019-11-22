@@ -92,8 +92,8 @@ All components and facts concepts relate (skos:inScheme) to one or more classifi
 
 ### Axioms & Mappings
 
-*g0v mef ontology* axioms and mappingswith othe rontologies are formally espressed as SPARQL construct in the [axioms directory](axioms). 
-Here isa a textual short index
+*g0v mef ontology* axioms and mappings with other ontologies are formally expressed as SPARQL constructs in the [axioms directory](axioms). 
+Here is a short index:
 
 - [axiom 1](axioms/01-metrics.construct):*mef:StructuralComponents* is an extension of fr:StructuralComponents that exports three distinct metrics : the *mef:competenza*, *mef:cassa* and *mef:residui* that are monetary metrics always expressed in EURO; 
 the value of the component metrics is computed as the sum of the  facts.
