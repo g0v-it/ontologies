@@ -387,7 +387,6 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <owl:Class rdf:about="http://w3id/g0v/it/mef#Budget">
         <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#DataSet"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id/g0v/it/mef#entrate"/>
