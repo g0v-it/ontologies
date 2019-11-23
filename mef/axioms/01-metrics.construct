@@ -5,10 +5,12 @@
 ##  The value of the component metrics is computed as the sum of the  facts
 ##############################################################################
 PREFIX fr: <http://linkeddata.center/botk-fr/v1#>
+PREFIX sdmx-attribute:	<http://purl.org/linked-data/sdmx/2009/attribute#>
 PREFIX mef: <http://w3id.org/g0v/it/mef#>
 
 CONSTRUCT { 
 	?component 
+		sdmx-attribute:unitMeasure <http://publications.europa.eu/resource/authority/currency/EUR> ;
 		mef:competenza ?competenzaSum ;
 		mef:cassa ?cassaSum ;
 		mef:residui ?residuiSum
@@ -16,8 +18,8 @@ CONSTRUCT {
 WHERE {
 	SELECT ?component (SUM(?competenza) AS ?competenzaSum) (SUM(?cassa) AS ?cassaSum) (SUM(?residui) AS ?residuiSum) WHERE {
 		?fact a mef:Fact ;  
-			fr:isPartOf+ ?component  ;
-			mef:competenza ?competenza;
+			fr:isPartOf+ ?component ;
+			mef:competenza ?competenza ;
 			mef:cassa ?cassa ;
 			mef:residui ?residui; 
 	} GROUP BY ?component

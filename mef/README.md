@@ -55,21 +55,28 @@ The Italian budget (mef:Budget) exists in four states:
 
 In each state more than one release can be published.
 
-To capture this life cycle, fr:versionId uses the convention <YEAR><REPORT VERSIONID>:
+To capture this life cycle, fr:versionId uses the convention {YEAR}{REPORT VERSIONID}{REVISION ID}:
 
-- <YEAR> refers to the reference year of the financial document,
-- <REPORT TYPE> refers to the main budget state: 
+- {YEAR} refers to the reference year of the financial document,
+- {REPORT TYPE} refers to the main budget state: 
     - **A** means *Disegno di Legge di Bilancio*, 
     - **B** means *Legge di Bilancio*,  
     - **C** means *Previsioni di assestamento*, 
     - **D** means *Rendiconto Bilancio*
+- {REVISION ID} is an optional non negative integer representing a specific budget release.
+
+some axioms apply:
+- the budget subtype can be inferred by the {REPORT TYPE} part in fr:versionId.
+- the budget fr:referencePeriod can be inferred by the {YEAR} part in fr:versionId.
+
 
 
 e.g.:
 
-- *2020A* means the *Disegno di Legge di Bilancio* relative to 2020 year as published in Nov. 2019
+- *2020A* means the last release of the *Disegno di Legge di Bilancio* relative to 2020 year
 - *2019B* means the release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament in Dec. 2018
 - *2018D* means Rendiconto* of 2018 year as approved by the Italian Parliament in 2019
+- *2020A20191105* means *Disegno di Legge di Bilancio* relative to 2020 year as approved by the Italian Parliament the 05/11/2019
 
 
 ### Taxonomies
@@ -111,5 +118,5 @@ Following String datatype are defined:
 
 | datatype              | regexp                        | on property  |
 |-----------------------|-------------------------------|--------------|
-| mef:BudgetVersion     | `^20\d{2}[A-D]$`              | fr:versionId |
+| mef:BudgetVersion     | `^(20\d{2})([A-D])(\d*)$`     | fr:versionId |
 
