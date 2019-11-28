@@ -14,7 +14,7 @@ WHERE {
 		IRI(
 			CONCAT(
 				"http://reference.data.gov.uk/doc/gregorian-interval/", 
-				SUBSTR(STR(?versionId), 1,4)),
+				SUBSTR(STR(?versionId), 1,4),
 				"-01-01T00:00:00/P1Y"
 			)
 		) 
