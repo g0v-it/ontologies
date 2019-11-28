@@ -8,8 +8,8 @@ Status: **unstable**
 
 The [Italian budget](https://openbdap.mef.gov.it/it/BdS) is a set of living financial reports defined by the Economy and Finance Administration of the Italian Government (i.e. *Ministero dell'Economia e delle Finance* - **MEF**).
 
-The *g0v mef ontology* is a conceptual model developed by the [g0v.it civic hacking team](https://g0v.it)
-to represent the Italian budget and its its historical perspective;
+The *g0v mef ontology* is a simplified conceptual model developed by the [g0v.it civic hacking team](https://g0v.it)
+to represent the Italian budget with its historical perspective;
 *g0v mef ontology*  defines the sets of things that are of interest in describing the MEF world, and the ways that those things can relate to one another. 
 
 In this way, *g0v mef ontology* adds formal meaning to the raw data that are published in the [BDAP Open Data Catalog](https://bdap-opendata.mef.gov.it/catalog) by MEF.
@@ -44,26 +44,25 @@ The class **mef:Budget** describes the Italian Budget Report as a subclass of th
 ![UML diagram](uml-diagram.png)
 
 
-### Budget life cycle
+### Budget life cycle and version id
 
-The Italian budget (mef:Budget) exists in four states:
+The Italian budget (mef:Budget) exists in four main states:
 
 - *Disegno di Legge di Bilancio* (mef:DisegnoLeggeBilancio): published yearly by the Italian government (usually at the beginning of November) and presented to the Italian Parliament and to the EU commission for approval.
 - *Legge di Bilancio* (mef:LeggeBilancio): approved by the Italian Parliament usually before the end of the year
-- *Previsioni di Assestamento di Bilancio (mef:AssestamentoBilancio)*: approved by the Italian Parliament usually at the mid of the year
+- *Previsioni di Assestamento di Bilancio (mef:AssestamentoBilancio)*: last revision of the approved by the Italian Parliament usually at the mid of the year
 - *Rendiconto* (mef:Rendiconto): approved by the Italian Parliament as a consolidated view of the budget data
 
 In each state more than one release can be published.
 
-To capture this life cycle, fr:versionId uses the convention {YEAR}{REPORT VERSIONID}{REVISION ID}:
+To capture this life cycle with a compact id, fr:versionId uses the convention {YEAR}{REPORT TYPE}:
 
-- {YEAR} refers to the reference year of the financial document,
+- {YEAR} refers to the last two digits of the reference year of the financial document,
 - {REPORT TYPE} refers to the main budget state: 
-    - **A** means *Disegno di Legge di Bilancio*, 
-    - **B** means *Legge di Bilancio*,  
-    - **C** means *Previsioni di assestamento*, 
-    - **D** means *Rendiconto Bilancio*
-- {REVISION ID} is an optional non negative integer representing a specific budget release.
+    - **L** means *Disegno di Legge di Bilancio*, 
+    - **D** means *Legge di Bilancio*,  
+    - **P** means *Provvedimento di Assestamento*, 
+    - **R** means *Rendiconto*
 
 some axioms apply:
 - the budget subtype can be inferred by the {REPORT TYPE} part in fr:versionId.
@@ -73,10 +72,9 @@ some axioms apply:
 
 e.g.:
 
-- *2020A* means the last release of the *Disegno di Legge di Bilancio* relative to 2020 year
-- *2019B* means the release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament in Dec. 2018
-- *2018D* means Rendiconto* of 2018 year as approved by the Italian Parliament in 2019
-- *2020A20191105* means *Disegno di Legge di Bilancio* relative to 2020 year as approved by the Italian Parliament the 05/11/2019
+- *20D* means the last release of the *Disegno di Legge di Bilancio* relative to 2020 year
+- *19L* means the release of *Legge di Bilancio* relative to 2019 year as approved by the Italian Parliament in Dec. 2018
+- *18R* means Rendiconto* of 2018 year as approved by the Italian Parliament in 2019
 
 
 ### Taxonomies
@@ -116,7 +114,7 @@ the value of the component metrics is computed as the sum of the  facts.
 Following String datatype are defined:
 
 
-| datatype              | regexp                        | on property  |
-|-----------------------|-------------------------------|--------------|
-| mef:BudgetVersion     | `^(20\d{2})([A-D])(\d*)$`     | fr:versionId |
+| datatype              | regexp                 | on property  |
+|-----------------------|------------------------|--------------|
+| mef:BudgetVersion     | `^(\d{2})(L|D|P|R)$`   | fr:versionId |
 
