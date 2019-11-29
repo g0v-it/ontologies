@@ -5,6 +5,7 @@
 ##  all component are related to one or more taxonomies exposed by budget
 ##############################################################################
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb: <http://purl.org/linked-data/cube#> 
 PREFIX mef: <http://w3id.org/g0v/it/mef#>
 
 CONSTRUCT {?concept skos:inScheme ?scheme }
