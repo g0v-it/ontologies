@@ -28,13 +28,13 @@
      xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#">
     <owl:Ontology rdf:about="http://w3id.org/g0v/it/mef">
         <dc:creator xml:lang="en">Enrico Fagnoni enrico@linkeddata.center</dc:creator>
-        <dc:date>2019-11-28</dc:date>
+        <dc:date>2019-12-02</dc:date>
         <dc:description rdf:resource="https://g0v-it.github.io/ontologies/mef/uml-diagram.png"/>
-        <dc:description xml:lang="en">captures the &quot;Legge di Bilancio&quot; (i.e. the Italian expense budget) published by the &quot;Ministero della Economia e Finanze&quot; in 
-its three release states : *Rendiconto*, *Legge di Bilancio*, *Disegno di legge di Bilancio* (i.e. consolidated, budget, previsional budget) 
+        <dc:description xml:lang="en">captures the &quot;Legge di Bilancio&quot; (i.e. the Italian expense budget) published by the &quot;Ministero della Economia e Finanze&quot;</dc:description>
+        <dc:rights xml:lang="en">The g0v-it mef  vocabulary was developed by developed by Enrico Fagnoni @ http://linkeddata.center/ and contributors
+an it is available under the Creative Commons Attribution 4.0 . 
 
-The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://www.w3.org/2004/02/skos/core vocabularies</dc:description>
-        <dc:rights xml:lang="en">The g0v-it mef  vocabulary is available under the Creative Commons Attribution 4.0 . This work is based on the botk-fr ontology, developed by Enrico Fagnoni @ http://linkeddata.center/</dc:rights>
+This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-fr/v1) by Enrico Fagnoni @ http://linkeddata.center/</dc:rights>
         <dc:title xml:lang="en">An ontology to annotate Italian MEF reports</dc:title>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <rdfs:label xml:lang="en">G0V MEF vocabulary</rdfs:label>
@@ -102,25 +102,6 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#string -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string">
-        <rdfs:comment xml:lang="en">A jerarchic path description</rdfs:comment>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -129,16 +110,11 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
-    <!-- http://linkeddata.center/botk-fr/v1#isPartOf -->
-
-    <owl:ObjectProperty rdf:about="http://linkeddata.center/botk-fr/v1#isPartOf"/>
-    
-
-
     <!-- http://w3id.org/g0v/it/mef#entrate -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#entrate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
         <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Entrata"/>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
@@ -153,7 +129,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Entrata-&gt;Titolo entrata-&gt;Natura-&gt;Tipologia</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema ETNT</rdfs:label>
@@ -168,7 +144,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Entrata-&gt;Titolo entrata-&gt;Tipologia-&gt;Provento-&gt;Capitolo-&gt;Articolo</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema ETTPCA</rdfs:label>
@@ -183,7 +159,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Ministero-&gt;Missione-&gt;Programma-&gt;Azione-&gt;Capitolo di spesa-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMMPACP</rdfs:label>
@@ -198,7 +174,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Missione-&gt;Programma</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMP</rdfs:label>
@@ -213,7 +189,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Ministero-&gt;Missione-&gt;Programma-&gt;Azione-&gt;Capitolo di spesa-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMRMP</rdfs:label>
@@ -228,7 +204,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Ministero-&gt;Titolo spesa-&gt;Categoria</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMTC</rdfs:label>
@@ -243,10 +219,31 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Titolo di spesa-&gt;Categoria-&gt;Capitolo-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema STCCP</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#inBudget -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#inBudget">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:comment rdf:resource="http://w3id.org/g0v/it/mef"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#isPartOf">
+        <rdfs:comment rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:comment xml:lang="it">similar to fr:isPartOf</rdfs:comment>
+        <rdfs:label xml:lang="it">parte di</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -255,6 +252,7 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#spese">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
         <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Spesa"/>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
@@ -273,23 +271,14 @@ The mef  vocabulary extends the http://linkeddata.center/botk-fr/v1 and http://w
     
 
 
-    <!-- http://linkeddata.center/botk-fr/v1#versionId -->
-
-    <owl:DatatypeProperty rdf:about="http://linkeddata.center/botk-fr/v1#versionId"/>
-    
-
-
-    <!-- http://purl.org/linked-data/sdmx/2009/measure#obsValue -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
-    
-
-
     <!-- http://w3id.org/g0v/it/mef#cassa -->
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#cassa">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="it">metrica di bilancio che riporta i valori per cassa per il componente strutturale a cui si riferisce. Espressa in Euro. Può rappresentare un valore fattuale (ovvero un dato ricavato direttamente da documenti contabili) o un dato calcolato dalla aggregazione di più dati fattuali.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">importo per  cassa</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -323,7 +312,70 @@ Utilizzato per skos:notation</rdfs:comment>
     <!-- http://w3id.org/g0v/it/mef#competenza -->
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#competenza">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="it">metrica di bilancio che riporta i valori per competenza per il componente strutturale a cui si riferisce. Espressa in Euro. Può rappresentare un valore fattuale (ovvero un dato ricavato direttamente da documenti contabili) o un dato calcolato dalla aggregazione di più dati fattuali.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">importo di competenza</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#criteri -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#criteri">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Azione"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:comment xml:lang="it">descrizione dei criteri di spesa associati all&apos;azione</rdfs:comment>
+        <rdfs:label xml:lang="it">criteri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#definition -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#definition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">Descrizione del componente così come fornito dal MEF. Sostanzialmente equivalente a skos:definition</rdfs:comment>
+        <rdfs:comment xml:lang="it">definizione</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#esercizio -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#esercizio">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2099</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#notation -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#notation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
     </owl:DatatypeProperty>
     
@@ -332,15 +384,23 @@ Utilizzato per skos:notation</rdfs:comment>
     <!-- http://w3id.org/g0v/it/mef#residui -->
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#residui">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="it">metrica di bilancio che riporta i valori residui per il componente strutturale a cui si riferisce. Espressa in Euro. Può rappresentare un valore fattuale (ovvero un dato ricavato direttamente da documenti contabili) o un dato calcolato dalla aggregazione di più dati fattuali.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">importo residui</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+    <!-- http://w3id.org/g0v/it/mef#versionId -->
 
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation"/>
+    <owl:DatatypeProperty rdf:about="http://w3id.org/g0v/it/mef#versionId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -355,43 +415,13 @@ Utilizzato per skos:notation</rdfs:comment>
     
 
 
-    <!-- http://linkeddata.center/botk-fr/v1#Component -->
-
-    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#Component"/>
-    
-
-
-    <!-- http://linkeddata.center/botk-fr/v1#Fact -->
-
-    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#Fact"/>
-    
-
-
-    <!-- http://linkeddata.center/botk-fr/v1#FinancialReport -->
-
-    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
-    
-
-
-    <!-- http://linkeddata.center/botk-fr/v1#StructuralComponent -->
-
-    <owl:Class rdf:about="http://linkeddata.center/botk-fr/v1#StructuralComponent"/>
-    
-
-
-    <!-- http://purl.org/linked-data/cube#DataSet -->
-
-    <owl:Class rdf:about="http://purl.org/linked-data/cube#DataSet"/>
-    
-
-
     <!-- http://w3id.org/g0v/it/mef#Articolo -->
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#Articolo">
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Fact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#CapitoloEntrata"/>
             </owl:Restriction>
@@ -408,6 +438,22 @@ Utilizzato per skos:notation</rdfs:comment>
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#AssestamentoBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#versionId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:pattern>^[1-9][0-9]P$</xsd:pattern>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Legge che, in corso di gestione, autorizza l’adeguamento degli stanziamenti del bilancio di previsione
 dello Stato in relazione anche alla consistenza dei residui attivi e passivi accertati in sede di rendiconto
 dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel corso della gestione svolta
@@ -424,9 +470,16 @@ dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Programma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#criteri"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Livello di dettaglio di un programma che specifica ulteriormente la finalità della spesa.</rdfs:comment>
@@ -439,8 +492,6 @@ dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel
     <!-- http://w3id.org/g0v/it/mef#Budget -->
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#Budget">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#FinancialReport"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/linked-data/cube#DataSet"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#entrate"/>
@@ -452,49 +503,49 @@ dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeETNT"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeETTPCA"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeSMMPACP"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeSMP"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeSMRMP"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeSMTC"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#hasSchemeSTCCP"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -506,9 +557,37 @@ dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#versionId"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#esercizio"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2099</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#versionId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:pattern>^[1-9][0-9][A-Z]$</xsd:pattern>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Il Bilancio dello Stato (budget) è un documento contabile, proposto dal Governo e approvato dal Parlamento, che espone le entrate e le spese grazie alle quali lo Stato fa fronte ai bisogni della collettività secondo gli obiettivi individuati dalla politica.</rdfs:comment>
@@ -524,23 +603,23 @@ dell’esercizio precedente e alle eventuali nuove o diverse esigenze emerse nel
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Azione"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#CapitoloDiSpesa"/>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#CategoriaSpesa"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Unità contabile rilevante ai soli fini della gestione e della rendicontazione.
 Ogni capitolo e&apos; iscritto nello Stato di Previsione di una Amministrazione. Esso non costituisce più oggetto di approvazione parlamentare ai fini
 della previsione della spesa.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Capitolo di Spesa</rdfs:label>
+        <rdfs:label xml:lang="it">Capitolo di Spesa (CdS)</rdfs:label>
     </owl:Class>
     
 
@@ -551,7 +630,7 @@ della previsione della spesa.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Provento"/>
             </owl:Restriction>
@@ -570,7 +649,7 @@ essere suddiviso in articoli .</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TitoloSpesa"/>
             </owl:Restriction>
@@ -590,7 +669,7 @@ dalla legge n. 94 del 1997).</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Ministero"/>
             </owl:Restriction>
@@ -605,11 +684,11 @@ dalla legge n. 94 del 1997).</rdfs:comment>
     <!-- http://w3id.org/g0v/it/mef#Component -->
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#Component">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Component"/>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
-        <rdfs:comment xml:lang="it">Rappresenta una dimensione del Bilancio dello Stato.</rdfs:comment>
+        <owl:disjointWith rdf:resource="http://w3id.org/g0v/it/mef#Fact"/>
+        <rdfs:comment xml:lang="it">Rappresenta una dimensione del Bilancio dello Stato che aggrega diversi fatti. Simile a fr:Component</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Componete di bilancio</rdfs:label>
+        <rdfs:label xml:lang="it">Dimensione  di analisi (componente)</rdfs:label>
     </owl:Class>
     
 
@@ -618,6 +697,22 @@ dalla legge n. 94 del 1997).</rdfs:comment>
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#DisegnoLeggeBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#versionId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:pattern>^[1-9][0-9]D$</xsd:pattern>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Il disegno di legge di approvazione del bilancio di previsione è formato sulla base della legislazione
 vigente e tenuto conto dei parametri indicati nel documento di economia e finanza (DEF).
 (art. 21, legge n. 196 del 2009 – Legge di contabilità e finanza pubblica).</rdfs:comment>
@@ -642,9 +737,14 @@ vigente e tenuto conto dei parametri indicati nel documento di economia e finanz
     <!-- http://w3id.org/g0v/it/mef#Fact -->
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#Fact">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#Fact"/>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
-        <rdfs:comment xml:lang="it">Elemento fattuale del bilancio</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="it">Elemento fattuale del del budget. Aggrega le metriche  ricavate da documenti contabili che possono essere agregate in diverse dimensioni (mef:Component).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">Fatto</rdfs:label>
     </owl:Class>
@@ -655,6 +755,22 @@ vigente e tenuto conto dei parametri indicati nel documento di economia e finanz
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#LeggeBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#versionId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:pattern>^[1-9][0-9]L$</xsd:pattern>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Legge con la quale viene adottato il bilancio di previsione dello Stato: essa fissa i limiti ed i contenuti
 della gestione finanziaria dello Stato e ne autorizza l’esecuzione. La legge di bilancio è formata apportando
 al disegno di legge di bilancio le variazioni determinate dalla legge di stabilità. È un atto con forma di legge,
@@ -676,7 +792,7 @@ finanza pubblica)</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Spesa"/>
             </owl:Restriction>
@@ -684,7 +800,7 @@ finanza pubblica)</rdfs:comment>
         <rdfs:comment xml:lang="it">Si fa riferimento alle Amministrazioni centrali dello Stato ovvero i Ministeri. Ciascuna
 amministrazione è identificata con uno specifico stato di previsione della spesa nel bilancio.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Ministero</rdfs:label>
+        <rdfs:label xml:lang="it">Stato di previsione spesa (Ministero)</rdfs:label>
     </owl:Class>
     
 
@@ -696,7 +812,7 @@ amministrazione è identificata con uno specifico stato di previsione della spes
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Spesa"/>
             </owl:Restriction>
@@ -718,21 +834,21 @@ presentato in base alle Missioni a partire dal 2008.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Ministero"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Missione"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Rappresenta la  parte di una Missione in carico ad un Ministero</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Missione Ministero</rdfs:label>
+        <rdfs:label xml:lang="it">Missione per Ministero</rdfs:label>
     </owl:Class>
     
 
@@ -743,7 +859,7 @@ presentato in base alle Missioni a partire dal 2008.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TitoloEntrata"/>
             </owl:Restriction>
@@ -759,14 +875,14 @@ presentato in base alle Missioni a partire dal 2008.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Fact"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#CapitoloDiSpesa"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Suddivisione del capitolo di spesa. Rappresenta l&apos;elemento fattuale di spesa più dettagliato presente nel  Bilancio dello Stato</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Piano di Gestione</rdfs:label>
+        <rdfs:label xml:lang="it">Piano di Gestione (PdG)</rdfs:label>
     </owl:Class>
     
 
@@ -778,7 +894,14 @@ presentato in base alle Missioni a partire dal 2008.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Missione"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#MissioneMinistero"/>
             </owl:Restriction>
@@ -801,7 +924,7 @@ della legge 31 dicembre 2009, n. 196.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Tipologia"/>
             </owl:Restriction>
@@ -816,6 +939,22 @@ della legge 31 dicembre 2009, n. 196.</rdfs:comment>
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#RendicontoBilancio">
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#versionId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:pattern>^[1-9][0-9]R$</xsd:pattern>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="it">Documento che mostra i risultati della complessiva gestione svolta nell’anno finanziario, con distinto
 e simultaneo riferimento alle gestioni di competenza, di cassa e dei residui (conto del bilancio), e delle
 variazioni intervenute nel patrimonio dello Stato per effetto della gestione del bilancio o anche per altre
@@ -824,6 +963,83 @@ cause (conto generale del patrimonio).
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">Rendiconto</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/rendiconto/index.html"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeETNT -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeETNT">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia entrate per Titolo/Natura/Tipologia</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione ETNT (Tipologia entrate)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeETTPCA -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeETTPCA">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia entrate per Titolo/Tipologia/Provento/Capitolo/Articolo</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione ETTPCA (entrate per Articolo)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeSMMPACP -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeSMMPACP">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia spese per Ministero/Missione/Programma/Azione/Capitolo/Piano di gestione</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione SMMPACP (spesa per Azioni)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeSMP -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeSMP">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia spese per Missione/Programma</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione SMP (per Missione)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeSMRMP -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeSMRMP">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia spese per Ministero/Centro di responsabilità/Missione/Programma</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione SMRMP (CdR)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeSMTC -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeSMTC">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">Gerarchia spese per  da Ministero/Titolo/Categoria</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione SMTC (Categoria di spesa)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#SchemeSTCCP -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#SchemeSTCCP">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Classificazione STCCP (Titolo di spesa)</rdfs:label>
+        <rdfs:label xml:lang="it">Gerarchia spese per Titolo/Categoria/Capitolo/Piano di gestione</rdfs:label>
     </owl:Class>
     
 
@@ -842,8 +1058,12 @@ cause (conto generale del patrimonio).
     <!-- http://w3id.org/g0v/it/mef#StructuralComponent -->
 
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#StructuralComponent">
-        <rdfs:subClassOf rdf:resource="http://linkeddata.center/botk-fr/v1#StructuralComponent"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#cassa"/>
@@ -860,16 +1080,16 @@ cause (conto generale del patrimonio).
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#residui"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#notation"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#notation"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#residui"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -879,9 +1099,19 @@ cause (conto generale del patrimonio).
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="it">Fatto o componente del budget</rdfs:comment>
+        <rdfs:comment xml:lang="it">Rappreresenta un fatto (una metrica) o una componente (dimensione) del budget</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
-        <rdfs:label xml:lang="it">Componente strutturale</rdfs:label>
+        <rdfs:label xml:lang="it">Componente strutturale del budget</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#TassonomiaBilancio -->
+
+    <owl:Class rdf:about="http://w3id.org/g0v/it/mef#TassonomiaBilancio">
+        <rdfs:comment xml:lang="it">Schema di classificazione equivalente a skos:ConceptScheme</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">Tassonomia bilancio</rdfs:label>
     </owl:Class>
     
 
@@ -893,21 +1123,21 @@ cause (conto generale del patrimonio).
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Natura"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#TitoloEntrata"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
             </owl:Restriction>
@@ -923,7 +1153,7 @@ cause (conto generale del patrimonio).
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Entrata"/>
             </owl:Restriction>
@@ -939,7 +1169,7 @@ cause (conto generale del patrimonio).
         <rdfs:subClassOf rdf:resource="http://w3id.org/g0v/it/mef#Component"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://linkeddata.center/botk-fr/v1#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Spesa"/>
             </owl:Restriction>
@@ -967,24 +1197,6 @@ entrata e dalle aree omogenee di attività costituite dai Programmi di spesa. Va
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">Unità di voto parlamentare</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    
-
-
-    <!-- http://www.w3.org/ns/dcat#Dataset -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset"/>
     
 
 
@@ -1024,6 +1236,27 @@ entrata e dalle aree omogenee di attività costituite dai Programmi di spesa. Va
             <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#Tipologia"/>
             <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#TitoloEntrata"/>
             <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#TitoloSpesa"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#Budget"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeETNT"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeETTPCA"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeSMMPACP"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeSMP"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeSMRMP"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeSMTC"/>
+            <rdf:Description rdf:about="http://w3id.org/g0v/it/mef#SchemeSTCCP"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

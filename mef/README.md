@@ -33,12 +33,17 @@ You can access this ontology by:
  
 ## The mef vocabulary
 
-The mef Vocabulary extends the [Financial Report](http://linkeddata.center/botk-fr/v1) and the [SKOS](http://www.w3.org/2004/02/skos/core)
-
 The namespace for *g0v mef ontology* is *http://w3id.org/g0v/it/mef#* and the suggested prefix is *mef:*
 
+The mef Vocabulary is compatible with  the [Financial Report vocabulary (fr)](http://linkeddata.center/botk-fr/v1) and with the [SKOS vocabulary](http://www.w3.org/2004/02/skos/core):
 
-The class **mef:Budget** describes the Italian Budget Report as a subclass of the [fr:FinancialReport](http://linkeddata.center/botk-fr/v1#FinancialReport) and should be related (dct:source) with some documents described with [DCAT](https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0) (according with DCAT-AP_IT v1.0 profile) vocabulary.
+- the class **mef:Budget** describes the Italian Budget Report and is derived from *fr:FinancialReport]* ;
+- the classes **mef:Fact**, **mef:Component**, and **mef:StructuralComponent** are from 
+homonymous properties in the *fr:* vocabulary
+- the class **mef:Taxonomy** is derived from *skos:ConceptScheme*
+- **mef:isPartOf** and **mef:inTaxonomy** properties derive from skos:broader and skos:inScheme properties.
+
+Here's a UML big picture:
 
 
 ![UML diagram](uml-diagram.png)
@@ -50,25 +55,21 @@ The Italian budget (mef:Budget) exists in four main states:
 
 - *Disegno di Legge di Bilancio* (mef:DisegnoLeggeBilancio): published yearly by the Italian government (usually at the beginning of November) and presented to the Italian Parliament and to the EU commission for approval.
 - *Legge di Bilancio* (mef:LeggeBilancio): approved by the Italian Parliament usually before the end of the year
-- *Previsioni di Assestamento di Bilancio (mef:AssestamentoBilancio)*: last revision of the approved by the Italian Parliament usually at the mid of the year
+- *Previsioni di Assestamento di Bilancio* (mef:AssestamentoBilancio): last revision of the approved by the Italian Parliament usually at the mid of the year
 - *Rendiconto* (mef:Rendiconto): approved by the Italian Parliament as a consolidated view of the budget data
 
-In each state more than one release can be published.
+Each report has an extension of one year (mef:esercizio) with range from 2017 to 2099 inclusive.
+**Why from 2017?** because the Italian Parliament in 2017 defined the budget structure as described in mef ontology. 
 
-To capture this life cycle with a compact id, fr:versionId uses the convention {YEAR}{REPORT TYPE}:
 
-- {YEAR} refers to the last two digits of the reference year of the financial document,
+The **mef:versionId** property captures the budget life cycle using the convention {YEAR}{REPORT TYPE}:
+
+- {YEAR} refers to the last two digits of the mefesercizio of the financial document, ranging from 17 to 99,
 - {REPORT TYPE} refers to the main budget state: 
     - **L** means *Disegno di Legge di Bilancio*, 
     - **D** means *Legge di Bilancio*,  
     - **P** means *Provvedimento di Assestamento*, 
     - **R** means *Rendiconto*
-
-some axioms apply:
-- the budget subtype can be inferred by the {REPORT TYPE} part in fr:versionId.
-- the budget fr:referencePeriod can be inferred by the {YEAR} part in fr:versionId.
-
-
 
 e.g.:
 
@@ -77,11 +78,12 @@ e.g.:
 - *18R* means Rendiconto* of 2018 year as approved by the Italian Parliament in 2019
 
 
+
 ### Taxonomies
 
 The budget report is made by facts (mef:Fact) that are aggregated in components (mef:Components)
 
-All components and facts concepts relate (skos:inScheme) to one or more classification scheme (i.e.taxonomies):
+All components and facts concepts relate (mef:inTaxonomy) to one or more classification scheme (mef:Taxonomy):
 
 - taxonomies related to expenses (S):
     - mef:hasSchemeSMMPACP (**Ministero->Missione->Programma->Azione->Capitolo di spesa->Piano di gestione**)
@@ -95,26 +97,32 @@ All components and facts concepts relate (skos:inScheme) to one or more classifi
     
 
 
-### Axioms & Mappings
+### Axioms 
 
-*g0v mef ontology* axioms and mappings with other ontologies are formally expressed as SPARQL constructs in the [axioms directory](axioms). 
-Here is a short index:
+In addition to the restrictions specified in the OWL file, the following axioms apply:
 
-- [axiom 1](axioms/01-metrics.construct):*mef:StructuralComponents* is an extension of fr:StructuralComponents that exports three distinct metrics : the *mef:competenza*, *mef:cassa* and *mef:residui* that are monetary metrics always expressed in EURO; 
-the value of the component metrics is computed as the sum of the  facts.
-- [axiom 2](axioms/02-one-year-as-reference-period.construct): *fr:refPeriod* refers always to a full solar year period;
-- [axiom 3](axioms/03-taxonomies.construct): all mef:StructuralComponents are skos:Concept related (skos:inScheme) to one or more taxonomies (skos:Scheme) exposed by *mef:Budget*;
-- [axiom 4](axioms/04-partof.construct):*fr:isPartOf* should be considered as a sub-property of skos:broader with inverse skos:narrower;
-- [axiom 5](axioms/05-versioning.construct): components in different budgets with the same skos:notation should be considered related with skos:closeConcept properties and version related (dct:has version and dct:isVersionOf) taking into consideration the reference the version label.
+- *mef:competenza*, *mef:cassa* and *mef:residui* that are monetary metrics always expressed in EURO as defined in http://publications.europa.eu/resource/authority/currency/EUR; 
+- the mef:esercizio property represents the temporal period of one year ranging from 1 January to 31 December as define din https://github.com/epimorphics/IntervalServer/blob/master/interval-uris.md
+- all mef:StructuralComponent individuals, refer to the same period of the related budget;
+- the the value of the component metrics is computed as the sum of the related facts
+- the budget taxonomies can be inferred from static rules ( see [building rule](taxonomy-axioms/build.construct) and [linking rule](taxonomy-axioms/links.construct))
+
+### Mappings
+
+mef ontology can be mapped safely to:
+
+- [SKOS](mappings/mef2skos/),
+- [Financial Report](mappings/mef2fr/), 
+- [Dublin Core](mappings/mef2dct/)
+
+See the README file in the linked directories for more info.
 
 
+## License
 
-### Datatypes
+The g0v-it mef  vocabulary was developed by developed by Enrico Fagnoni @ http://linkeddata.center/ and contributors
+an it is available under the Creative Commons Attribution 4.0 . 
 
-Following String datatype are defined:
+This work is derived from the [botk-fr ontology](http://linkeddata.center/botk-fr/v1) by Enrico Fagnoni @ http://linkeddata.center/
 
-
-| datatype              | regexp                 | on property  |
-|-----------------------|------------------------|--------------|
-| mef:BudgetVersion     | `^(\d{2})(L|D|P|R)$`   | fr:versionId |
 

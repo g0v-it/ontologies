@@ -1,0 +1,16 @@
+PREFIX mef: <http://w3id.org/g0v/it/mef#>
+
+CONSTRUCT { 
+	?budget 
+		mef:hasSchemeSMMPACP [ a mef:SchemeSMMPACP ] ;
+		mef:hasSchemeSMRMP [ a mef:SchemeSMRMP ]  ;
+		mef:hasSchemeSMTC [ a mef:SchemeSMTC ] ;
+		mef:hasSchemeSTCCP [ a mef:SchemeSTCCP ] ;
+		mef:hasSchemeSMP [ a mef:SchemeSMP ]  ;
+		mef:hasSchemeETNT [ a mef:SchemeETNT ]  ;
+		mef:hasSchemeETTPCA [ a mef:SchemeETTPCA ] 
+	.
+}
+WHERE {
+	?budget a mef:Budget.
+}
