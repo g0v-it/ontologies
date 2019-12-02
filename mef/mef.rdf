@@ -229,6 +229,19 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
         <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
         <rdfs:comment rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:comment xml:lang="it">relazione tra componete strutturale di bilancio e budget</rdfs:comment>
+        <rdfs:label xml:lang="it">nel budget</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/g0v/it/mef#inTaxonomy -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#inTaxonomy">
+        <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+        <rdfs:comment xml:lang="it">relazione tra componente strutturale e uno o più tassonomie</rdfs:comment>
+        <rdfs:label xml:lang="it">nella tassonomia</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1058,8 +1071,15 @@ cause (conto generale del patrimonio).
     <owl:Class rdf:about="http://w3id.org/g0v/it/mef#StructuralComponent">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#isPartOf"/>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#inTaxonomy"/>
                 <owl:someValuesFrom rdf:resource="http://w3id.org/g0v/it/mef#TassonomiaBilancio"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/g0v/it/mef#inBudget"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
