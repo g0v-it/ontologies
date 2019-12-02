@@ -117,7 +117,9 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
         <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Entrata"/>
+        <rdfs:comment xml:lang="it">è il livello di aggregazione più elevato  delle entrate nel budget</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">entrate</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -125,11 +127,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeETNT -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeETNT">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeETNT"/>
         <rdfs:comment xml:lang="it">Entrata-&gt;Titolo entrata-&gt;Natura-&gt;Tipologia</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema ETNT</rdfs:label>
@@ -140,11 +141,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeETTPCA -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeETTPCA">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeETTPCA"/>
         <rdfs:comment xml:lang="it">Entrata-&gt;Titolo entrata-&gt;Tipologia-&gt;Provento-&gt;Capitolo-&gt;Articolo</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema ETTPCA</rdfs:label>
@@ -155,11 +155,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeSMMPACP -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeSMMPACP">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeSMMPACP"/>
         <rdfs:comment xml:lang="it">Ministero-&gt;Missione-&gt;Programma-&gt;Azione-&gt;Capitolo di spesa-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMMPACP</rdfs:label>
@@ -170,11 +169,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeSMP -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeSMP">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeSMP"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Missione-&gt;Programma</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMP</rdfs:label>
@@ -185,11 +183,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeSMRMP -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeSMRMP">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeSMRMP"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Ministero-&gt;Missione-&gt;Programma-&gt;Azione-&gt;Capitolo di spesa-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMRMP</rdfs:label>
@@ -200,11 +197,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeSMTC -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeSMTC">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeSMTC"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Ministero-&gt;Titolo spesa-&gt;Categoria</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema SMTC</rdfs:label>
@@ -215,11 +211,10 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
     <!-- http://w3id.org/g0v/it/mef#hasSchemeSTCCP -->
 
     <owl:ObjectProperty rdf:about="http://w3id.org/g0v/it/mef#hasSchemeSTCCP">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
-        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#StructuralComponent"/>
+        <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#SchemeSTCCP"/>
         <rdfs:comment xml:lang="it">Spesa-&gt;Titolo di spesa-&gt;Categoria-&gt;Capitolo-&gt;Piano di gestione</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
         <rdfs:label xml:lang="it">ha schema STCCP</rdfs:label>
@@ -255,7 +250,9 @@ This work was derived from the [botk-fr ontology](http://linkeddata.center/botk-
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#Budget"/>
         <rdfs:range rdf:resource="http://w3id.org/g0v/it/mef#Spesa"/>
+        <rdfs:comment xml:lang="it">è il livello di aggregazione più elevato  delle spese nel budget</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label xml:lang="it">spese</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -303,8 +300,9 @@ Utilizzato per skos:notation</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://w3id.org/g0v/it/mef#UnitaDiVotoParlamentare"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="it">codice di unità di voto</rdfs:comment>
+        <rdfs:comment xml:lang="it">si riferice al codice di unità di voto</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/g0v/it/mef"/>
+        <rdfs:label>codice di unità di voto</rdfs:label>
     </owl:DatatypeProperty>
     
 
