@@ -35,12 +35,13 @@ You can access this ontology by:
 
 The namespace for *g0v mef ontology* is *http://w3id.org/g0v/it/mef#* and the suggested prefix is *mef:*
 
-The mef Vocabulary is inspired to the [Financial Report vocabulary (fr)](http://linkeddata.center/botk-fr/v1) and to the [SKOS vocabulary](http://www.w3.org/2004/02/skos/core):
+The mef Vocabulary is compatible with  the [Financial Report vocabulary (fr)](http://linkeddata.center/botk-fr/v1) and with the [SKOS vocabulary](http://www.w3.org/2004/02/skos/core):
 
 - the class **mef:Budget** describes the Italian Budget Report and is derived from *fr:FinancialReport]* ;
-- the classes **mef:Fact**, **mef:Component**, and **mef:StructuralComponent** are skos:Concept derived from 
+- the classes **mef:Fact**, **mef:Component**, and **mef:StructuralComponent** are from 
 homonymous properties in the *fr:* vocabulary
 - the class **mef:Taxonomy** is derived from *skos:ConceptScheme*
+- **mef:isPartOf** and **mef:inTaxonomy** properties derive from skos:broader and skos:inScheme properties.
 
 Here's a UML big picture:
 
@@ -104,18 +105,17 @@ In addition to the restrictions specified in the OWL file, the following axioms 
 - the mef:esercizio property represents the temporal period of one year ranging from 1 January to 31 December as define din https://github.com/epimorphics/IntervalServer/blob/master/interval-uris.md
 - all mef:StructuralComponent individuals, refer to the same period of the related budget;
 - the the value of the component metrics is computed as the sum of the related facts
-
+- the budget taxonomies can be inferred from static rules ( see [building rule](taxonomy-axioms/build.construct) and [linking rule](taxonomy-axioms/links.construct))
 
 ### Mappings
 
 mef ontology can be mapped safely to:
 
-- [Financial Report](mappings/mef2fr/), 
 - [SKOS](mappings/mef2skos/),
-- [data cube vocabulary](mappings/mef2cube/)
+- [Financial Report](mappings/mef2fr/), 
 - [Dublin Core](mappings/mef2dct/)
 
-See the linked directoies for more info.
+See the README file in the linked directories for more info.
 
 
 ## License
