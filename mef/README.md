@@ -66,8 +66,8 @@ The **mef:versionId** property captures the budget life cycle using the conventi
 
 - {YEAR} refers to the last two digits of the mefesercizio of the financial document, ranging from 17 to 99,
 - {REPORT TYPE} refers to the main budget state: 
-    - **L** means *Disegno di Legge di Bilancio*, 
-    - **D** means *Legge di Bilancio*,  
+    - **D** means *Disegno di Legge di Bilancio*, 
+    - **L** means *Legge di Bilancio*,  
     - **P** means *Provvedimento di Assestamento*, 
     - **R** means *Rendiconto*
 
