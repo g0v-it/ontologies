@@ -1,4 +1,4 @@
-![copernicani](https://copernicani.it/wp-content/uploads/cropped-logo_orizzontale_trasparente-1-e1525161268864.png)
+![copernicani](https://www.copernicani.it/wp-content/uploads/2020/10/logo-in-bianco.png)
 
 
 g0v mef ontology
